@@ -2,5 +2,5 @@
 </script>
 
 <template>
-    <p>unidetails</p>
+    About us
 </template>

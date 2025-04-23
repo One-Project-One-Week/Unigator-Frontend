@@ -12,7 +12,7 @@ import UniDetail from '@/views/UniDetail.vue'
         </p>
 
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <a href="">
+            <a href="/universities-details">
                 <div
                     class="bg-white shadow-2xl rounded-lg overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl">
                     <div class="h-[150px] relative w-full bg-gray-100 flex items-center justify-center">
