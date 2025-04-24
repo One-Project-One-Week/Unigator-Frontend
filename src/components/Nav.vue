@@ -12,13 +12,13 @@
                 <a class="font-bold text-[18px] text-black no-underline" href="/">Home</a>
                 <a class="font-bold text-[18px] text-black no-underline" href="/universities">Universities</a>
                 <a class="font-bold text-[18px] text-black no-underline" href="/about">About</a>
-                <a class="font-bold text-[18px] text-black no-underline" href="your-link">Link Text</a>
+                <a class="font-bold text-[18px] text-black no-underline" href="/contact">Contact</a>
             </div>
             <div class="w-[20%] h-full flex items-center justify-start gap-3">
-                <button
-                    class="h-[50%] px-4 border-2 border-blue-500 bg-blue-500 text-white rounded-[10px] cursor-pointer text-center transition-all duration-300 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Register</button>
-                <button
-                    class="h-[50%] px-4 border-2 border-[#FFECDB] text-[#FFECDB] rounded-[10px] cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#FFECDB] hover:border-gray-200 hover:text-black hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">Login</button>
+                <a href="/register"
+                    class="h-[50%] px-4 border-2 border-blue-500 bg-blue-500 text-white rounded-[10px] cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">Register</a>
+                <a href="/login"
+                    class="h-[50%] px-4 border-2 border-[#FFECDB] text-[#FFECDB] rounded-[10px] cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#FFECDB] hover:border-gray-200 hover:text-black hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2">Login</a>
             </div>
         </nav>
     </section>

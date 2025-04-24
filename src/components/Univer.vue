@@ -37,6 +37,21 @@
                     </div>
 
                     <div class="mb-4">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-2">Cities</h3>
+                        <div>
+                            <select
+                                class="block w-full border border-gray-300 text-gray-700 py-2 px-2 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
+                                <!-- Loop Cities -->
+                                <option>All Cities</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-2">Budget</h3>
+                    </div>
+
+                    <div class="mb-4">
                         <h3 class="text-sm font-semibold text-gray-700 mb-2">University Type</h3>
                         <div class="space-y-1 text-sm text-gray-600 flex gap-2">
                             <label class="inline-flex items-center">
@@ -88,261 +103,289 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607m0 0v3.752a2.25 2.25 0 01-2.25 2.25H5.252a2.25 2.25 0 01-2.25-2.25V16.5" />
                         </svg>
-                        <input type="text" placeholder="Search universities by name or keyword..."
-                            class="outline-none text-sm text-gray-700 w-[250px] ">
+                        <input type="text" placeholder="Search universities and programs by name or keyword..."
+                            class="outline-none text-sm text-gray-700 w-[350px] ">
+                        <div>
+
+                        </div>
                     </div>
                     <span class="text-sm text-gray-600">Showing 10 Universities</span>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- loop university information  -->
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <!-- Looping The programs -->
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
-                        <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
-                            <!-- Images here -->
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
-                            <p class="text-sm text-gray-600 mb-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor"
-                                    class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
-                                </svg>
-                                Cambridge, United States
-                            </p>
-                            <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League research
-                                university in Cambridge,...</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
-                                    Administration</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
-                                <span
-                                    class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                    <a href="/universities-details">
+                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                <!-- Images here -->
+                            </div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                <p class="text-sm text-gray-600 mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor"
+                                        class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    </svg>
+                                    Cambridge, United States
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                    research
+                                    university in Cambridge,...</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                        Administration</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Law</span>
+                                    <span
+                                        class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Medicine</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </main>
         </div>
