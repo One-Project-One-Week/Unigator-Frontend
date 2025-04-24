@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
+import UniDetail from '@/views/UniDetail.vue'
+import About from '@/views/About.vue'
+import Universities from '@/views/Universities.vue'
+import Contact from '@/views/Contact.vue'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+import Dashboard from '@/views/University Dashboard/Dashboard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +15,41 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home,
+    },
+    {
+      path: '/universities-details',
+      name: 'university details',
+      component: UniDetail,
+    },
+    {
+      path: '/universities',
+      name: 'universities',
+      component: Universities,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About,
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact,
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register,
+    },
+    {
+      path: '/university-dashboard',
+      name: 'university-dashboard',
+      component: Dashboard,
     },
   ],
 })
