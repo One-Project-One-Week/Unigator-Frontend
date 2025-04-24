@@ -18,11 +18,15 @@ import Button from './ui/Button.vue';
                 <router-link class="font-bold text-[18px] text-black no-underline hover:text-blue-500"
                     active-class="text-blue-500" to="/about">About</router-link>
                 <router-link class="font-bold text-[18px] text-black no-underline" active-class="text-blue-500"
-                    to="your-link">Link Text</router-link>
+                    to="/contact">Contact</router-link>
             </div>
             <div class="w-[20%] h-full flex items-center justify-start gap-3">
-                <Button text="Register" intent="primary" />
-                <Button text="Login" intent="outline" />
+                <a href="/register">
+                    <Button text="Register" intent="primary" />
+                </a>
+                <a href="/login">
+                    <Button text="Login" intent="outline" />
+                </a>
             </div>
         </nav>
     </section>

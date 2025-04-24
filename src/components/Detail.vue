@@ -30,12 +30,5 @@
                 </div>
             </div>
         </div>
-        <div class="left-0 bg-gray-100 py-2 px-4 text-sm text-gray-500">
-            <a href="#" class="hover:underline">Home</a>
-            <span class="mx-1">&gt;</span>
-            <a href="#" class="hover:underline">Universities</a>
-            <span class="mx-1">&gt;</span>
-            <span>University of Oxford</span>
-        </div>
     </div>
 </template>
