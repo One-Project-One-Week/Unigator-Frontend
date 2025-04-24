@@ -2,6 +2,15 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import { ref } from 'vue'
 
+interface PaginationMeta {
+    current_page: number
+    last_page: number
+    per_page: number
+    total: number,
+    next_page_url: string,
+    prev_page_url: string
+}
+
 interface University {
     id: number
     name: string
@@ -15,10 +24,23 @@ interface University {
     ranking: number,
 }
 
-const useUniStore = defineStore('uni', () => {
+interface PaginatedResponse {
+    data: University[]
+    meta: PaginationMeta
+}
+
+export const useUniStore = defineStore('uni', () => {
     const topUniversities = ref<University[]>([])
     const universities = ref<University[]>([])
     const loading = ref(false)
+    const pagination = ref<PaginationMeta>({
+        current_page: 1,
+        last_page: 1,
+        per_page: 10,
+        next_page_url: '',
+        prev_page_url: '',
+        total: 0
+    })
 
     const fetchTopUniversities = async () => {
         try {
@@ -32,11 +54,17 @@ const useUniStore = defineStore('uni', () => {
         }
     }
 
-    const fetchAllUniversities = async () => {
+    const fetchAllUniversities = async (page: number = 1, perPage: number = 10) => {
         try {
             loading.value = true
-            const res = await axios.get('/university')
+            const res = await axios.get<PaginatedResponse>('/university', {
+                params: {
+                    page,
+                    per_page: perPage
+                }
+            })
             universities.value = res.data.data
+            pagination.value = res.data.meta
         } catch (err: any) {
             throw err
         } finally {
@@ -76,5 +104,14 @@ const useUniStore = defineStore('uni', () => {
         }
     }
 
+    return {
+        topUniversities,
+        universities,
+        loading,
+        pagination,
+        fetchTopUniversities,
+        fetchAllUniversities,
+        fetchUniversity,
+        updateUniversity
+    }
 })
-export default useUniStore
