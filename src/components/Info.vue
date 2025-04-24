@@ -1,3 +1,9 @@
+<script setup>
+import { ref } from 'vue';
+
+const activeTab = ref('overview');
+</script>
+
 <template>
     <div class="bg-gray-100 py-10">
         <div class="container mx-auto px-4">
@@ -302,9 +308,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-
-const activeTab = ref('overview');
-</script>
