@@ -2,6 +2,7 @@
 import Nav from '@/components/Nav.vue'
 import Detail from '@/components/Detail.vue';
 import Info from '@/components/Info.vue';
+import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -15,5 +16,9 @@ import Info from '@/components/Info.vue';
 
     <div>
         <Info />
+    </div>
+
+    <div>
+        <Footer />
     </div>
 </template>

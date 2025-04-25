@@ -132,7 +132,7 @@ const activeTab = ref('Universities')
         </div>
     </div>
 
-    <section v-if="activeTab === 'Universities'" class="mb-8">
+    <section v-if="activeTab === 'Universities'">
         <div class="bg-gray-100 py-8">
             <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <aside class="lg:col-span-1">
@@ -216,16 +216,22 @@ const activeTab = ref('Universities')
 
                 <main class="lg:col-span-3">
                     <div class="flex items-center justify-between mb-4">
-                        <div
-                            class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                            </svg>
-                            <input type="text" placeholder="Search universities and programs by name or keyword..."
-                                class="outline-none text-sm text-gray-700 w-[350px] ml-4">
+                        <div class="flex gap-4">
+                            <div
+                                class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                                <input type="text" placeholder="Search universities and programs by name or keyword..."
+                                    class="outline-none text-sm text-gray-700 w-[350px] ml-4">
+                            </div>
+                            <button class="px-4 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer">
+                                Search
+                            </button>
                         </div>
+
                         <span class="text-sm text-gray-600">Showing {{ pagination.total }} Universities</span>
                     </div>
 
@@ -259,7 +265,7 @@ const activeTab = ref('Universities')
                                     <div class="flex flex-wrap gap-2">
                                         <!-- Looping The programs -->
                                         <span v-for="pn in university?.program_names"
-                                            class="bg-pink-100 text-pink-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                            class="bg-blue-100 text-blue-500 text-xs rounded-full px-2 py-1 font-medium">Business
                                             {{ pn }}</span>
                                     </div>
                                 </div>
@@ -294,7 +300,7 @@ const activeTab = ref('Universities')
             </div>
         </div>
     </section>
-    <section v-if="activeTab === 'Programs'" class="mb-8">
+    <section v-if="activeTab === 'Programs'">
         <div class="bg-gray-100 py-8">
             <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <aside class="lg:col-span-1">
