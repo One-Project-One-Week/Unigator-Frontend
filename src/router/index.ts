@@ -21,8 +21,8 @@ const router = createRouter({
       component: Home,
     },
     {
-      path: '/universities-details',
-      name: 'university details',
+      path: '/universities-details/:slug',
+      name: 'university-details',
       component: UniDetail,
     },
     {

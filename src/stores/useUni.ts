@@ -63,8 +63,8 @@ export const useUniStore = defineStore('uni', () => {
                     per_page: perPage
                 }
             })
-            universities.value = res.data.data
-            pagination.value = res.data.meta
+            universities.value = res.data.data.data
+            pagination.value = res.data.data.meta
         } catch (err: any) {
             throw err
         } finally {
