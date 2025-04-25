@@ -6,34 +6,6 @@ const activeTab = ref('Programs');
 
 <template>
     <div class="flex bg-gray-100 min-h-screen p-4">
-        <aside class="bg-white w-64 min-h-screen border-r border-gray-200 p-4">
-            <div class="flex items-center mb-8 gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-building"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
-                    <path
-                        d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
-                </svg>
-                <h1 class="text-2xl font-semibold text-blue-500">University Portal</h1>
-            </div>
-            <ul class="flex flex-col space-x-4 gap-3">
-                <li @click="activeTab = 'Dashboard'" class="cursor-pointer">
-                    <a
-                        :class="{ 'px-15 bg-white shadow-md rounded-md p-2': activeTab === 'Dashboard', 'text-black hover:text-blue-500': activeTab !== 'Dashboard' }">Dashboard</a>
-                </li>
-                <li @click="activeTab = 'Profile'" class="cursor-pointer">
-                    <a
-                        :class="{ 'px-10 bg-white shadow-md rounded-md p-2': activeTab === 'Profile', 'text-black hover:text-blue-500': activeTab !== 'Profile' }">University
-                        Profile</a>
-                </li>
-                <li @click="activeTab = 'Programs'" class="cursor-pointer">
-                    <a
-                        :class="{ 'px-10 bg-white shadow-md rounded-md p-2': activeTab === 'Programs', 'text-black hover:text-blue-500': activeTab !== 'Programs' }">Academic
-                        Programs</a>
-                </li>
-            </ul>
-        </aside>
 
         <main class="flex-1">
             <header class="flex justify-between items-center bg-gray-200 p-2">
