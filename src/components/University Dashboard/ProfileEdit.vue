@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-</script>]
+</script>
 
 <template>
     <div class="w-[100%] bg-gray-100 py-2 px-4 sm:px-6 lg:px-8 pt-5">

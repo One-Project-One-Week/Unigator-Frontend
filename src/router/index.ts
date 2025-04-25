@@ -11,6 +11,7 @@ import ProgramDetail from '@/components/University Dashboard/ProgramDetail.vue'
 import Program from '@/components/Program.vue'
 import NewProgram from '@/components/University Dashboard/NewProgram.vue'
 import ProfileEdit from '@/components/University Dashboard/ProfileEdit.vue'
+import StudentProfile from '@/components/Student/StudentProfile.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -74,6 +75,11 @@ const router = createRouter({
       path: '/uni-profile-edit',
       name: 'uni-profile-edit',
       component: ProfileEdit,
+    },
+    {
+      path: '/student-profile',
+      name: 'student-profile',
+      component: StudentProfile,
     },
   ],
 })

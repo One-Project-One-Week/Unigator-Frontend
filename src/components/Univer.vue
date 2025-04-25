@@ -216,14 +216,15 @@ const activeTab = ref('Universities')
 
                 <main class="lg:col-span-3">
                     <div class="flex items-center justify-between mb-4">
-                        <div class="bg-white rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-5 h-5 text-gray-500 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607m0 0v3.752a2.25 2.25 0 01-2.25 2.25H5.252a2.25 2.25 0 01-2.25-2.25V16.5" />
+                        <div
+                            class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                             </svg>
                             <input type="text" placeholder="Search universities and programs by name or keyword..."
-                                class="outline-none text-sm text-gray-700 w-[350px]">
+                                class="outline-none text-sm text-gray-700 w-[350px] ml-4">
                         </div>
                         <span class="text-sm text-gray-600">Showing {{ pagination.total }} Universities</span>
                     </div>
@@ -242,14 +243,13 @@ const activeTab = ref('Universities')
                                 </div>
                                 <div class="p-4">
                                     <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university.name }}</h3>
-                                    <p class="text-sm text-gray-600 mb-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor"
-                                            class="w-4 h-4 inline-block align-text-bottom mr-1">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                    <p class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                            <path
+                                                d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                                         </svg>
                                         {{ university.city }}, {{ university.country }}
                                     </p>
@@ -390,9 +390,9 @@ const activeTab = ref('Universities')
                             </svg>
                             <input type="text" placeholder="Search universities and programs by name or keyword..."
                                 class="outline-none text-sm text-gray-700 w-[350px] ">
-                            <div>
-
-                            </div>
+                            <button class="bg-slate-300">
+                                Search
+                            </button>
                         </div>
                         <span class="text-sm text-gray-600">Showing 10 Universities</span>
                     </div>

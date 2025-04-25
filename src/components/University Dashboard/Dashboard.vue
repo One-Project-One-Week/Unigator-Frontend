@@ -7,16 +7,18 @@ const activeTab = ref('Dashboard');
 <template>
     <div class="flex bg-gray-100 min-h-screen p-4">
         <aside class="bg-white w-64 min-h-screen border-r border-gray-200 p-4">
-            <div class="flex items-center mb-8 gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-building"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
-                    <path
-                        d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
-                </svg>
-                <h1 class="text-2xl font-semibold text-blue-500">University Portal</h1>
-            </div>
+            <a href="/university-dashboard">
+                <div class="flex items-center mb-8 gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-building"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                        <path
+                            d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
+                    </svg>
+                    <h1 class="text-2xl font-semibold text-blue-500">University Portal</h1>
+                </div>
+            </a>
             <ul class="flex flex-col space-x-4 gap-3">
                 <li @click="activeTab = 'Dashboard'" class="cursor-pointer">
                     <a
@@ -61,8 +63,8 @@ const activeTab = ref('Dashboard');
             </header>
 
             <section v-if="activeTab === 'Dashboard'" class="mb-8">
-                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 py-3 px-5">
-                    <div class="bg-white rounded-lg shadow-md p-4">
+                <section class="w-full flex justify-center gap-6 mb-8 py-3 px-5">
+                    <div class="w-[30%] bg-white rounded-lg shadow-md p-4">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4">University Rating</h3>
                         <div class="flex gap-2 mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold"
@@ -75,24 +77,15 @@ const activeTab = ref('Dashboard');
                         <p>This Rating is only from the users of our website</p>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-md p-4">
+                    <div class="w-[30%] bg-white rounded-lg shadow-md p-4">
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Total Program</h3>
                         <div class="text-2xl font-bold text-blue-700">9</div>
                         <h3>We are currently teaching 9 programs</h3>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-md p-4">
+                    <div class="w-[30%] bg-white rounded-lg shadow-md p-4">
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Student Population </h3>
                         <div class="text-2xl font-bold text-gray-700">12235</div>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg shadow-md p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Messages</h3>
-                        <div class="text-2xl font-bold text-gray-700">5</div>
-                        <p class="text-red-500 text-sm">Unread messages</p>
-                        <button
-                            class="mt-4 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">View
-                            Messages</button>
                     </div>
                 </section>
             </section>
@@ -211,7 +204,7 @@ const activeTab = ref('Dashboard');
                                             <p class="mt-1 text-sm text-gray-500">Bachelor's Degree</p>
                                         </div>
                                         <div class="flex gap-2">
-                                            <button
+                                            <a href="/program-details"
                                                 class="text-gray-500 hover:text-blue-500 focus:outline-none cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -220,7 +213,7 @@ const activeTab = ref('Dashboard');
                                                     <path fill-rule="evenodd"
                                                         d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                                 </svg>
-                                            </button>
+                                            </a>
                                             <button
                                                 class="text-gray-500 hover:text-red-500 focus:outline-none cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -254,8 +247,8 @@ const activeTab = ref('Dashboard');
                                             <p class="mt-1 text-sm text-gray-500">Bachelor's Degree</p>
                                         </div>
                                         <div class="flex gap-2">
-                                            <button
-                                                class="text-gray-500 hover:text-blue-500 focus:outline-none cursor-pointer">
+                                            <a class="text-gray-500 hover:text-blue-500 focus:outline-none cursor-pointer"
+                                                href="/program-details">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                     <path
@@ -263,7 +256,7 @@ const activeTab = ref('Dashboard');
                                                     <path fill-rule="evenodd"
                                                         d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                                 </svg>
-                                            </button>
+                                            </a>
                                             <button
                                                 class="text-gray-500 hover:text-red-500 focus:outline-none cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"

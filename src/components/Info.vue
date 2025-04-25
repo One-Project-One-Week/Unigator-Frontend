@@ -2,6 +2,12 @@
 import { ref } from 'vue';
 
 const activeTab = ref('overview');
+
+const rating = ref(0)
+const hover = ref(0)
+
+function setRating(value) {
+  rating.value = value}
 </script>
 
 <template>
@@ -32,7 +38,24 @@ const activeTab = ref('overview');
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-2">
                     <section v-if="activeTab === 'overview'" class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">About University of Oxford</h2>
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="text-2xl font-semibold text-gray-800">About University of Oxford</h2>
+
+                            <div class="bg-white shadow-md rounded-md py-2 px-3">
+                                <p class="font-semibold mb-2">Rate this University</p>
+                                <div class="flex items-center gap-1">
+                                    <template v-for="star in 5" :key="star">
+                                        <button @click="setRating(star)" @mouseover="hover = star"
+                                            @mouseleave="hover = 0" class="text-2xl focus:outline-none">
+                                            <span
+                                                :class="star <= (hover || rating) ? 'text-yellow-400' : 'text-gray-300'">★</span>
+                                        </button>
+                                    </template>
+                                    <span class="ml-2 text-sm text-gray-600">{{ rating }} / 5</span>
+
+                                </div>
+                            </div>
+                        </div>
                         <p class="text-gray-700 mb-4">
                             The University of Oxford is a collegiate research university in Oxford, England. It is the
                             oldest university in the
@@ -121,7 +144,8 @@ const activeTab = ref('overview');
                                 </svg>
                                 Philosophy, Politics and Economics
                             </a>
-                            <a href="/programs" class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -129,7 +153,8 @@ const activeTab = ref('overview');
                                 </svg>
                                 Law
                             </a>
-                            <a href="/programs" class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -137,7 +162,8 @@ const activeTab = ref('overview');
                                 </svg>
                                 Medicine
                             </a>
-                            <a href="/programs" class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -145,14 +171,16 @@ const activeTab = ref('overview');
                                 </svg>
                                 English Literature
                             </a>
-                            <a href="/programs" class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                 </svg>
                                 History
                             </a>
-                            <a href="programs" class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            <a href="programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -287,9 +315,6 @@ const activeTab = ref('overview');
                             <h4 class="font-semibold text-gray-700">Email</h4>
                             <p class="text-gray-600 text-sm">study@ox.ac.uk</p>
                         </div>
-                        <button class="bg-black text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-800">
-                            Request Information
-                        </button>
                     </section>
 
                     <section class="bg-white rounded-md shadow-md p-6">
