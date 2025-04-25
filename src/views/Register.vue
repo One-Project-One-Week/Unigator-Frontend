@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
+import UserRegisterForm from '@/components/form/UserRegisterForm.vue';
+import UniRegisterForm from '@/components/form/UniRegisterForm.vue';
 
 const activeTab = ref('Student');
 </script>
@@ -32,187 +34,11 @@ const activeTab = ref('Student');
             </div>
 
             <section v-if="activeTab === 'Student'" class="mb-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md space-y-6">
-                    <div class="text-center space-y-2">
-                        <h2 class="text-xl font-semibold text-gray-800">Create an account</h2>
-                        <p class="text-gray-600 text-sm">Enter your information to create an account</p>
-                    </div>
-
-                    <form class="space-y-4">
-                        <div>
-                            <label for="firstName" class="block text-gray-700 text-sm font-bold mb-1">Name</label>
-                            <input type="text" id="Name" placeholder="John"
-                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                        </div>
-                        <div>
-                            <label for="lastName" class="block text-gray-700 text-sm font-bold mb-1">Phone</label>
-                            <input type="text" id="lastName" placeholder="Phone"
-                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                        </div>
-
-                        <div>
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-1">Email</label>
-                            <input type="email" id="email" placeholder="name@example.com"
-                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                        </div>
-
-                        <div>
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-1">Password</label>
-                            <div class="relative">
-                                <input type="password" id="password" placeholder="********"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                                <button type="button"
-                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 focus:outline-none">
-                                </button>
-                            </div>
-                            <p class="text-gray-500 text-xs mt-2">Password must be at least 8 characters long and
-                                include a
-                                number and a special character</p>
-                        </div>
-
-                        <div>
-                            <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-1">Confirm
-                                password</label>
-                            <div class="relative">
-                                <input type="password" id="confirmPassword" placeholder="********"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                                <button type="button"
-                                    class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 focus:outline-none">
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center">
-                            <input type="checkbox" id="terms"
-                                class="mr-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                            <label for="terms" class="text-gray-700 text-sm">I agree to the terms and conditions</label>
-                        </div>
-
-                        <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline w-full transition-colors duration-300">
-                            Create account
-                        </button>
-                    </form>
-
-                    <div class="text-center text-gray-600 text-sm">
-                        Already have an account?
-                        <a href="/login"
-                            class="text-blue-500 hover:text-blue-700 focus:outline-none focus:shadow-outline">
-                            Sign in
-                        </a>
-                    </div>
-                </div>
+                <UserRegisterForm />
             </section>
 
             <section v-if="activeTab === 'University'" class="mb-8">
-                <div class="w-[500px] bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <div class="text-center space-y-2">
-                        <h2 class="text-xl font-semibold text-gray-800">Create an account</h2>
-                        <p class="text-gray-600 text-sm">Enter your information to create an account</p>
-                    </div>
-
-                    <form class="w-[100%] space-y-4">
-                        <div>
-                            <label for="firstName" class="w-full block text-gray-700 text-sm font-bold mb-1">Univeristy
-                                Name</label>
-                            <input type="text" id="Name" placeholder="Havard University"
-                                class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                        </div>
-
-                        <div class="w-full flex gap-4">
-                            <div class="w-[48%]">
-                                <label for="lastName" class="block text-gray-700 text-sm font-bold mb-1">Phone</label>
-                                <input type="text" id="lastName" placeholder="Phone"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-
-                            <div class="w-[48%]">
-                                <label for="email" class="block text-gray-700 text-sm font-bold mb-1">Email</label>
-                                <input type="email" id="email" placeholder="name@example.com"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex gap-4">
-                                <div>
-                                    <label for="password"
-                                        class="block text-gray-700 text-sm font-bold mb-1">Password</label>
-                                    <div class="relative">
-                                        <input type="password" id="password" placeholder="********"
-                                            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                                        <button type="button"
-                                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 focus:outline-none">
-                                        </button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="confirmPassword"
-                                        class="block text-gray-700 text-sm font-bold mb-1">Confirm
-                                        password</label>
-                                    <div class="relative">
-                                        <input type="password" id="confirmPassword" placeholder="********"
-                                            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                                        <button type="button"
-                                            class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 focus:outline-none">
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-gray-500 text-xs mt-2">Password must be at least 8 characters long and
-                                include a
-                                number and a special character</p>
-                        </div>
-
-                        <div class="w-full flex gap-4">
-                            <div class="w-[48%]">
-                                <label for="lastName" class="block text-gray-700 text-sm font-bold mb-1">Country</label>
-                                <input type="text" id="lastName" placeholder="United States"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-
-                            <div class="w-[48%]">
-                                <label for="email" class="block text-gray-700 text-sm font-bold mb-1">City</label>
-                                <input type="email" id="email" placeholder="New York"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                        </div>
-
-                        <div>
-                            <div>
-                                <label for="Logo" class="block text-gray-700 text-sm font-bold mb-1">Logo (Image)</label>
-                                <input type="file" id="file"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div>
-                                <label for="web" class="block text-gray-700 text-sm font-bold mb-1">Website Link</label>
-                                <input type="text" id="text"
-                                    class="shadow appearance-none border rounded w-full py-3 px-4 text-blue-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            </div>
-                        </div>
-
-                        <div class="flex items-center">
-                            <input type="checkbox" id="terms"
-                                class="mr-2 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500">
-                            <label for="terms" class="text-gray-700 text-sm">I agree to the terms and conditions</label>
-                        </div>
-
-                        <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline w-full transition-colors duration-300">
-                            Create account
-                        </button>
-                    </form>
-
-                    <div class="text-center text-gray-600 text-sm">
-                        Already have an account?
-                        <a href="/login"
-                            class="text-blue-500 hover:text-blue-700 focus:outline-none focus:shadow-outline">
-                            Sign in
-                        </a>
-                    </div>
-                </div>
+                <UniRegisterForm />
             </section>
         </div>
     </div>

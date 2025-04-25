@@ -1,4 +1,17 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
+import { useLogin } from '@/composables/useLogin';
+
+const useForm = ref({
+    email: '',
+    password: '',
+})
+
+const { handleLogin, loading, errors, errorMessage } = useLogin()
+
+const handleSubmit = async () => {
+    await handleLogin(useForm.value.email, useForm.value.password)
+}
 </script>
 
 <template>
@@ -22,20 +35,23 @@
                     <p class="text-gray-600 text-sm">Enter your email and password to access your account</p>
                 </div>
 
-                <form class="space-y-4">
+                <form @submit.prevent="handleSubmit" class="space-y-4">
                     <div>
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-1">Email</label>
-                        <input type="email" id="email" placeholder="name@example.com"
+                        <input v-model="useForm.email" type="email" id="email" placeholder="name@example.com"
                             class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                        <div v-if="errors.email || errorMessage" class="text-red-500 text-xs mt-1">
+                            {{ errors.email || errorMessage }}
+                        </div>
                     </div>
                     <div>
                         <label for="password" class="block text-gray-700 text-sm font-bold mb-1">Password</label>
                         <div class="relative">
-                            <input type="password" id="password" placeholder="********"
+                            <input v-model="useForm.password" type="password" id="password" placeholder="********"
                                 class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                            <button type="button"
-                                class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 focus:outline-none">
-                            </button>
+                            <div v-if="errors.password" class="text-red-500 text-xs mt-1">
+                                {{ errors.password[0] }}
+                            </div>
                         </div>
                         <a href="#"
                             class="text-xs text-blue-500 hover:text-blue-700 text-right block mt-2 focus:outline-none focus:shadow-outline">
@@ -51,13 +67,14 @@
 
                     <button type="submit"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline w-full transition-colors duration-300">
-                        Sign in
+                        {{ loading ? 'Signing in...' : 'Sign in' }}
                     </button>
                 </form>
 
                 <div class="text-center text-gray-600 text-sm">
                     Don't have an account?
-                    <a href="/register" class="text-blue-500 hover:text-blue-700 focus:outline-none focus:shadow-outline">
+                    <a href="/register"
+                        class="text-blue-500 hover:text-blue-700 focus:outline-none focus:shadow-outline">
                         Sign up
                     </a>
                 </div>

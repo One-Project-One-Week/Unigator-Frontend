@@ -22,11 +22,21 @@ interface University {
     description: string,
     rating: number,
     ranking: number,
+    program_names: string[]
 }
 
 interface PaginatedResponse {
-    data: University[]
-    meta: PaginationMeta
+    data: {
+        data: University[]
+        meta: PaginationMeta
+    }
+}
+
+interface FilterParams {
+    country?: string | null
+    city?: string | null
+    budget?: number | null
+    type?: 'public' | 'private' | null
 }
 
 export const useUniStore = defineStore('uni', () => {
@@ -54,13 +64,14 @@ export const useUniStore = defineStore('uni', () => {
         }
     }
 
-    const fetchAllUniversities = async (page: number = 1, perPage: number = 10) => {
+    const fetchAllUniversities = async (page: number = 1, perPage: number = 10, filters: FilterParams = {}) => {
         try {
             loading.value = true
             const res = await axios.get<PaginatedResponse>('/university', {
                 params: {
                     page,
-                    per_page: perPage
+                    per_page: perPage,
+                    ...filters
                 }
             })
             universities.value = res.data.data.data

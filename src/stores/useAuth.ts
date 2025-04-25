@@ -11,7 +11,7 @@ interface User {
 interface UserRegisterData {
   name: string
   email: string;
-  phone?: number;
+  phone?: string;
   password: string;
   password_confirmation: string;
 }
@@ -19,13 +19,14 @@ interface UserRegisterData {
 interface UniRegisterData {
   name: string,
   email: string,
-  phone?: number,
+  phone?: string,
   password: string,
   password_confirmation: string,
   logo?: string,
   country: string,
   city: string,
-  slug: string
+  slug: string,
+  website_link: string
 }
 
 export const useAuthStore = defineStore('auth', () => {
@@ -40,7 +41,7 @@ export const useAuthStore = defineStore('auth', () => {
       token.value = res.data.data.token
       localStorage.setItem('token', token.value)
       axios.defaults.headers.common['Authorization'] = `Bearer ${token.value}`
-      await fetchUser()
+      user.value = res.data.data.user
     } catch (err: any) {
       throw err
     } finally {
@@ -48,7 +49,7 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  const userRegister = async (data: UserRegisterData) => {
+  const userRegister = async (data: FormData) => {
     try {
       loading.value = true
       const res = await axios.post('/register', data)
@@ -63,10 +64,14 @@ export const useAuthStore = defineStore('auth', () => {
     }
   }
 
-  const uniRegister = async (data: UniRegisterData) => {
+  const uniRegister = async (data: FormData) => {
     try {
       loading.value = true
-      const res = await axios.post('/university/register', data)
+      const res = await axios.post('/university/register', data, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
       token.value = res.data.data.token
       localStorage.setItem('token', token.value)
       axios.defaults.headers.common['Authorization'] = `Bearer ${token.value}`

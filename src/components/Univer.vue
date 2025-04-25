@@ -12,6 +12,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select'
+import { useCountryAndCity } from '@/composables/getCountryAndCity'
 
 const uniStore = useUniStore()
 const { universities, pagination, loading } = storeToRefs(uniStore)
@@ -19,52 +20,45 @@ const { universities, pagination, loading } = storeToRefs(uniStore)
 const currentPage = ref(1)
 const perPage = ref(10)
 
-const fetchUniversities = async (page: number = 1) => {
-    await uniStore.fetchAllUniversities(page)
-    currentPage.value = page
-}
-
-// fetch countries and cities
-
-interface Country {
-    id: number;
-    name: string;
-    iso2: string;
-}
-
 interface City {
     id: number;
     name: string;
 }
 
-const countries = ref<Country[]>([])
+// Filter states
 const selectedCountry = ref('')
 const selectedCity = ref('')
+const budget = ref<number | null>(null)
+const universityType = ref<'public' | 'private' | null>(null)
 const cities = ref<City[]>([])
-const headers = new Headers()
-headers.append("X-CSCAPI-KEY", import.meta.env.VITE_COUNTRY_API)
 
-const requestOptions = {
-    method: 'GET',
-    headers: headers,
-    redirect: 'follow' as RequestRedirect
-};
-
-const fetchCountries = async () => {
-    const res = await fetch(import.meta.env.VITE_COUNTRY_URL, requestOptions)
-    const data = await res.json()
-    countries.value = data
+const fetchUniversities = async (page: number = 1) => {
+    const filters = {
+        country: selectedCountry.value.name,
+        city: selectedCity.value,
+        budget: budget.value,
+        type: universityType.value
+    }
+    await uniStore.fetchAllUniversities(page, perPage.value, filters)
+    currentPage.value = page
 }
 
-const fetchCities = async () => {
-    const res = await fetch(`https://api.countrystatecity.in/v1/countries/${selectedCountry.value}/cities`, requestOptions)
+const {
+    countries,
+    fetchCountries,
+    requestOptions
+} = useCountryAndCity()
+
+const fetchCities = async (country: string) => {
+    if (!selectedCountry.value) return
+    const res = await fetch(`https://api.countrystatecity.in/v1/countries/${country.iso2}/cities`, requestOptions)
     const data = await res.json()
     cities.value = data
 }
 
 watch(selectedCountry, () => {
     if (selectedCountry.value) {
-        fetchCities()
+        fetchCities(selectedCountry.value)
     }
 })
 
@@ -158,8 +152,7 @@ const activeTab = ref('Universities')
                                     <SelectContent>
                                         <SelectGroup>
                                             <SelectLabel>Countries</SelectLabel>
-                                            <SelectItem v-for="country in countries" :key="country.id"
-                                                :value="country.iso2">
+                                            <SelectItem v-for="country in countries" :key="country.id" :value="country">
                                                 {{ country.name }}
                                             </SelectItem>
                                         </SelectGroup>
@@ -190,24 +183,26 @@ const activeTab = ref('Universities')
 
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Budget</h3>
+                            <input type="number" v-model="budget"
+                                class="w-full py-2 px-2 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                         </div>
 
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">University Type</h3>
                             <div class="space-y-1 text-sm text-gray-600 flex gap-2">
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox"
-                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    <input type="radio" v-model="universityType" value="public"
+                                        class="form-radio h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
                                     Public
                                 </label>
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox"
-                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    <input type="radio" v-model="universityType" value="private"
+                                        class="form-radio h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
                                     Private
                                 </label>
                             </div>
                         </div>
-                        <button
+                        <button @click="fetchUniversities(1)"
                             class="bg-black text-white py-2 px-4 rounded-md w-full hover:bg-gray-800 text-sm font-medium">
                             Apply Filters
                         </button>
