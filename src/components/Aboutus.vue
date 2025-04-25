@@ -103,39 +103,5 @@
                 </div>
             </div>
         </section>
-
-        <!-- optional features  -->
-        <section class="bg-blue-100 py-12 md:py-20">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Join Our Mission</h2>
-                    <p class="text-gray-600 mb-6">
-                        We're always looking for passionate individuals to join our team. If you're excited about
-                        helping students find their path in higher education, we'd love to hear from you.
-                    </p>
-                    <div
-                        class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                        <button
-                            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-300">
-                            View Open Positions
-                        </button>
-                        <button
-                            class="bg-white hover:bg-gray-100 text-red-500 font-semibold py-3 px-6 rounded-full transition-colors duration-300 border border-red-500">
-                            Contact Us
-                        </button>
-                    </div>
-                </div>
-
-                <div class="md:w-1/2 text-gray-700 italic text-lg">
-                    <p class="relative pl-8">
-                        <span class="absolute left-0 top-0 text-red-500 text-4xl font-serif">&ldquo;</span>
-                        Education is the most powerful weapon which you can use to change the world.
-                    </p>
-                    <p class="text-right mt-4 font-normal not-italic text-sm">
-                        — Nelson Mandela
-                    </p>
-                </div>
-            </div>
-        </section>
     </div>
 </template>
