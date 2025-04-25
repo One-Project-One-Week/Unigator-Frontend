@@ -20,13 +20,20 @@ const { universities, pagination, loading } = storeToRefs(uniStore)
 const currentPage = ref(1)
 const perPage = ref(10)
 
+interface Country {
+    id: number;
+    name: string;
+    iso2: string;
+    emoji: string;
+}
+
 interface City {
     id: number;
     name: string;
 }
 
 // Filter states
-const selectedCountry = ref('')
+const selectedCountry = ref<Country | null>(null)
 const selectedCity = ref('')
 const budget = ref<number | null>(null)
 const universityType = ref<'public' | 'private' | null>(null)
@@ -34,7 +41,7 @@ const cities = ref<City[]>([])
 
 const fetchUniversities = async (page: number = 1) => {
     const filters = {
-        country: selectedCountry.value.name,
+        country: selectedCountry.value?.name,
         city: selectedCity.value,
         budget: budget.value,
         type: universityType.value
@@ -49,7 +56,7 @@ const {
     requestOptions
 } = useCountryAndCity()
 
-const fetchCities = async (country: string) => {
+const fetchCities = async (country: Country) => {
     if (!selectedCountry.value) return
     const res = await fetch(`https://api.countrystatecity.in/v1/countries/${country.iso2}/cities`, requestOptions)
     const data = await res.json()
@@ -222,7 +229,8 @@ const activeTab = ref('Universities')
                                 <input type="text" placeholder="Search universities and programs by name or keyword..."
                                     class="outline-none text-sm text-gray-700 w-[350px] ml-4">
                             </div>
-                            <button class="px-4 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer">
+                            <button
+                                class="px-4 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer">
                                 Search
                             </button>
                         </div>

@@ -15,7 +15,7 @@ interface City {
 export const useCountryAndCity = () => {
     const countries = ref<Country[]>([])
     const cities = ref<City[]>([])
-    const selectedCountry = ref<string>('')
+    const selectedCountry = ref<Country | null>(null)
     const selectedCity = ref<string>('')
 
     const headers = new Headers()
