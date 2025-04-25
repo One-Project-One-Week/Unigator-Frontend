@@ -27,6 +27,13 @@ import Button from './ui/Button.vue';
                 <a href="/login">
                     <Button text="Login" intent="outline" />
                 </a>
+
+                <!-- profile -->
+                <!-- <div class="flex">
+                    <div class="py-2 px-4 border-2 border-blue-400 rounded-md text-blue-600 hover:bg-gray-200 cursor-pointer">
+                        <h1>Profile</h1>
+                    </div>
+                </div> -->
             </div>
         </nav>
     </section>

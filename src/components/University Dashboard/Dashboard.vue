@@ -7,9 +7,18 @@ const activeTab = ref('Dashboard');
 <template>
     <div class="flex bg-gray-100 min-h-screen p-4">
         <aside class="bg-white w-64 min-h-screen border-r border-gray-200 p-4">
-            <div class="mb-8">
-                <h1 class="text-2xl font-semibold text-blue-400">University Portal</h1>
-            </div>
+            <a href="/university-dashboard">
+                <div class="flex items-center mb-8 gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-building"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+                        <path
+                            d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
+                    </svg>
+                    <h1 class="text-2xl font-semibold text-blue-500">University Portal</h1>
+                </div>
+            </a>
             <ul class="flex flex-col space-x-4 gap-3">
                 <li @click="activeTab = 'Dashboard'" class="cursor-pointer">
                     <a
@@ -30,32 +39,32 @@ const activeTab = ref('Dashboard');
 
         <main class="flex-1">
             <header class="flex justify-between items-center mb-8 bg-gray-200 p-2">
-                <div>
-                    <h2 class="text-xl font-semibold text-gray-800">University Dashboard</h2>
-                    <p class="text-gray-500 text-sm">Harvard University</p>
+                <div class="px-5">
+                    <h2 class="text-xl font-semibold text-blue-600">University Dashboard</h2>
+                    <p class="text-blue-500 text-sm">Harvard University</p>
                 </div>
-                <div class="flex items-center">
-                    <button class="mr-4 text-gray-700 focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3-9 3-9H3s3 2 3 9z"></path>
-                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-                        </svg>
-                    </button>
-                    <span class="text-gray-700 mr-2">Admin</span>
-                    <button class="focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </button>
+
+                <div class="flex items-center gap-5 ">
+                    <div class="flex items-center justify-center w-10 h-13 bg-white shadow-md rounded-lg">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-bell" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col align-center mr-8 bg-white shadow-md rounded-lg py-1 px-3">
+                        <h1 class="font-semibold text-gray-500">Harvard University</h1>
+                        <p class="text-md text-gray-500">Admin</p>
+                    </div>
                 </div>
             </header>
 
             <section v-if="activeTab === 'Dashboard'" class="mb-8">
-                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 py-3 px-5">
-                    <div class="bg-white rounded-lg shadow-md p-4">
+                <section class="w-full flex justify-center gap-6 mb-8 py-3 px-5">
+                    <div class="w-[30%] bg-white rounded-lg shadow-md p-4">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4">University Rating</h3>
                         <div class="flex gap-2 mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="gold"
@@ -68,182 +77,94 @@ const activeTab = ref('Dashboard');
                         <p>This Rating is only from the users of our website</p>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-md p-4">
+                    <div class="w-[30%] bg-white rounded-lg shadow-md p-4">
                         <h3 class="text-lg font-semibold text-gray-800 mb-2">Total Program</h3>
                         <div class="text-2xl font-bold text-blue-700">9</div>
                         <h3>We are currently teaching 9 programs</h3>
                     </div>
 
-                    <div class="bg-white rounded-lg shadow-md p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Top </h3>
-                        <div class="text-2xl font-bold text-gray-700">12</div>
-                        <p class="text-yellow-500 text-sm">Pending review</p>
-                        <button
-                            class="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Review
-                            Applications</button>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Messages</h3>
-                        <div class="text-2xl font-bold text-gray-700">5</div>
-                        <p class="text-red-500 text-sm">Unread messages</p>
-                        <button
-                            class="mt-4 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">View
-                            Messages</button>
+                    <div class="w-[30%] bg-white rounded-lg shadow-md p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Student Population </h3>
+                        <div class="text-2xl font-bold text-gray-700">12235</div>
                     </div>
                 </section>
             </section>
 
             <section v-if="activeTab === 'Profile'" class="mb-8">
-                <div class="w-[100%] bg-gray-100 py-2 px-4 sm:px-6 lg:px-8">
-                    <div class="mx-auto space-y-8">
-                        <div class="bg-white shadow overflow-hidden rounded-md p-5">
-                            <div>
-                                <h2 class="text-2xl font-semibold text-gray-900">Basic Information</h2>
-                                <p class="mt-1 text-sm text-gray-500">Update your university's core information</p>
-                            </div>
-                            <form action="" class="w-[100%] px-4 py-5 sm:p-6">
-                                <div class="grid gap-6">
+                <div>
+                    <div class="flex justify-end opacity-100 mb-4 gap-4">
+                        <a href="/uni-profile-edit">
+                            <button
+                                class="flex items-center gap-1 border-1 border-blue-400 rounded-md py-2 px-4 text-blue-500 hover:bg-gray-200 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd"
+                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                </svg>
+                                <p class="text-sm font-semibold">
+                                    Edit Program
+                                </p>
+                            </button>
+                        </a>
 
-                                    <div class="flex flex-col gap-3">
-                                        <img class="w-[20%] shadow-lg" src="/src/assets/images/logo.png" alt="">
-                                        <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Logo
-                                            (Image)</label>
-                                        <input type="file" id="phoneNumber" value="logo.png"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
+                        <button
+                            class="flex items-center gap-1 border-1 border-red-400 rounded-md py-2 px-4 text-red-500 hover:bg-red-100 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-trash3" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                            </svg>
+                            <p class="text-sm font-semibold">
+                                Delete
+                            </p>
+                        </button>
+                    </div>
 
-                                    <div class="flex flex-col gap-3">
-                                        <img class="w-[20%] shadow-lg" src="/src/assets/images/havard.png" alt="">
-                                        <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Cover
-                                            Photo</label>
-                                        <input type="file" id="phoneNumber" value="havard.png"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="flex w-[100%] gap-4">
-                                        <div class="flex flex-col w-full">
-                                            <label for="universityName"
-                                                class="block text-sm font-medium text-gray-700">University Name</label>
-                                            <input type="text" id="universityName" value="Harvard University"
-                                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                        </div>
-                                        <div class="flex flex-col w-full">
-                                            <label for="universityType"
-                                                class="block text-sm font-medium text-gray-700">University Type</label>
-                                            <select id="universityType"
-                                                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                                                <option>Private</option>
-                                                <option>Public</option>
-                                                <option>Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-span-1 sm:col-span-1">
-                                        <label for="foundedYear" class="block text-sm font-medium text-gray-700">Founded
-                                            Year</label>
-                                        <input type="text" id="foundedYear" value="1636"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-1">
-                                        <label for="country"
-                                            class="block text-sm font-medium text-gray-700">Country</label>
-                                        <input type="text" id="country" value="United States"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-1">
-                                        <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                                        <input type="text" id="city" value="Cambridge"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-1">
-                                        <label for="address" class="block text-sm font-medium text-gray-700">Student
-                                            Population</label>
-                                        <input type="text" id="address" value="19035"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-1">
-                                        <label for="officialWebsite"
-                                            class="block text-sm font-medium text-gray-700">Official Website</label>
-                                        <input type="text" id="officialWebsite" value="https://www.harvard.edu"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-1">
-                                        <label for="contactEmail"
-                                            class="block text-sm font-medium text-gray-700">Contact Email</label>
-                                        <input type="email" id="contactEmail" value="admissions@harvard.edu"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-1">
-                                        <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Phone
-                                            Number</label>
-                                        <input type="text" id="phoneNumber" value="+1 (617) 495-1551"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-
-                                    <div class="flex justify-end">
-                                        <button
-                                            class="flex px-6 py-2 bg-blue-400 text-white text-center rounded-md gap-4 hover:bg-blue-600 ease-in-out cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
-                                                <path d="M11 2H9v3h2z" />
-                                                <path
-                                                    d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
-                                            </svg>
-                                            Save Changes
-                                        </button>
-                                    </div>
+                    <div class="bg-gray-200 relative w-full h-[500px]">
+                        <div class="absolute inset-0 bg-gray-300 opacity-90">
+                            <img class="w-full h-full object-cover" src="/src/assets/images/havard.png" alt="">
+                        </div>
+                        <div class="absolute bottom-0 left-0 flex flex-row items-end px-20">
+                            <div class="bg-gray-300 w-32 h-32 rounded-md mb-4 flex items-center justify-center">
+                                <div class="w-28 h-28 bg-gray-400 rounded-sm overflow-hidden">
+                                    <img class="rounded-sm w-full h-full object-cover"
+                                        src="/src/assets/images/havard-logo.png" alt="">
                                 </div>
-                            </form>
+                            </div>
+                            <div class="ml-5 pb-10">
+                                <h2 class="text-4xl font-bold text-white">Havard University</h2>
+                                <h2 class="text-sm text-gray-200">
+                                    <p class="text-lg font-semibold text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            fill="currentColor"
+                                            class="bi bi-geo-alt inline-block align-text-bottom mr-1"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                            <path
+                                                d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                        </svg>
+                                        Havard, United State
+                                    </p>
+                                </h2>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="mx-auto space-y-8 mt-5">
-                        <div class="bg-white shadow overflow-hidden rounded-md p-5">
-                            <div>
-                                <h2 class="text-2xl font-semibold text-gray-900">Description</h2>
-                                <p class="mt-1 text-sm text-gray-500">Provide a compelling description of your
-                                    university</p>
-                            </div>
-                            <form action="" class="w-[100%] px-4 py-5 sm:p-6">
-                                <div class="grid gap-6">
-
-                                    <div class="flex flex-col w-full">
-                                        <label for="description" class="block text-sm font-medium text-gray-700">Detail
-                                            Description</label>
-                                        <textarea type="text" id="universityName"
-                                            placeholder="Harvard University is devoted to excellence in teaching, learning, and research, and to developing leaders who make a difference globally. The University has twelve degree-granting Schools in addition to the Radcliffe Institute for Advanced Study."
-                                            class="mt-1 p-4 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-                                    <div class="flex flex-col w-full">
-                                        <label for="description"
-                                            class="block text-sm font-medium text-gray-700">Mission</label>
-                                        <textarea type="text" id="universityName"
-                                            placeholder="To educate the citizens and citizen-leaders for our society. We do this through our commitment to the transformative power of a liberal arts and sciences education."
-                                            class="mt-1 p-4 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
-                                    </div>
-                                </div>
-
-                                <div class="flex justify-end mt-5">
-                                    <button
-                                        class="flex px-6 py-2 bg-blue-400 text-white text-center rounded-md gap-4 hover:bg-blue-600 ease-in-out cursor-pointer">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                            fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
-                                            <path d="M11 2H9v3h2z" />
-                                            <path
-                                                d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
-                                        </svg>
-                                        Save All Changes
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="flex flex-col py-2 px-6 mt-5 mx-3">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">About Our University</h2>
+                        <p class="text-gray-700 mb-4">
+                            The University of Oxford is a collegiate research university in Oxford, England. It is the
+                            oldest university in the
+                            English-speaking world and the world's second-oldest university in continuous operation.
+                        </p>
+                        <p class="text-gray-700">
+                            Oxford is a world-leading centre of learning, teaching and research and the oldest
+                            university in the English-speaking
+                            world. It consists of 39 independent colleges, and 6 permanent private halls.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -252,11 +173,14 @@ const activeTab = ref('Dashboard');
                 <div class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
                     <div class="max-w-7xl mx-auto space-y-8">
                         <div class="flex items-center justify-between">
-                            <h2 class="text-2xl font-semibold text-gray-900">Academic Programs</h2>
-                            <button
+                            <div class="flex flex-col">
+                                <h2 class="text-2xl font-semibold text-gray-900">Academic Programs</h2>
+                                <p>Manage your university's academic programs and courses</p>
+                            </div>
+                            <a href="/new-program"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline">
                                 Add New Program
-                            </button>
+                            </a>
                         </div>
 
                         <div class="flex flex-col sm:flex-row items-center gap-4">
@@ -280,7 +204,7 @@ const activeTab = ref('Dashboard');
                                             <p class="mt-1 text-sm text-gray-500">Bachelor's Degree</p>
                                         </div>
                                         <div class="flex gap-2">
-                                            <button
+                                            <a href="/program-details"
                                                 class="text-gray-500 hover:text-blue-500 focus:outline-none cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -289,7 +213,7 @@ const activeTab = ref('Dashboard');
                                                     <path fill-rule="evenodd"
                                                         d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                                 </svg>
-                                            </button>
+                                            </a>
                                             <button
                                                 class="text-gray-500 hover:text-red-500 focus:outline-none cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -307,9 +231,9 @@ const activeTab = ref('Dashboard');
                                     </div>
                                     <p class="mt-2 text-gray-600">A comprehensive program covering algorithms, software
                                         engineering, and computer systems.</p>
-                                    <p class="mt-2 text-gray-500 text-sm">Deadline: 1/1/2024</p>
+                                    <p class="mt-2 text-gray-500 text-sm">Intake: 1/1/2024</p>
                                     <p class="mt-4 text-xl font-semibold text-gray-900">$51,925 / year</p>
-                                    <a href="#"
+                                    <a href="/program-details"
                                         class="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none focus:shadow-outline text-sm">View
                                         Details</a>
                                 </div>
@@ -323,8 +247,8 @@ const activeTab = ref('Dashboard');
                                             <p class="mt-1 text-sm text-gray-500">Bachelor's Degree</p>
                                         </div>
                                         <div class="flex gap-2">
-                                            <button
-                                                class="text-gray-500 hover:text-blue-500 focus:outline-none cursor-pointer">
+                                            <a class="text-gray-500 hover:text-blue-500 focus:outline-none cursor-pointer"
+                                                href="/program-details">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                     <path
@@ -332,7 +256,7 @@ const activeTab = ref('Dashboard');
                                                     <path fill-rule="evenodd"
                                                         d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                                 </svg>
-                                            </button>
+                                            </a>
                                             <button
                                                 class="text-gray-500 hover:text-red-500 focus:outline-none cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -350,7 +274,7 @@ const activeTab = ref('Dashboard');
                                     </div>
                                     <p class="mt-2 text-gray-600">A comprehensive program covering algorithms, software
                                         engineering, and computer systems.</p>
-                                    <p class="mt-2 text-gray-500 text-sm">Deadline: 1/1/2024</p>
+                                    <p class="mt-2 text-gray-500 text-sm">Intake: 1/1/2024</p>
                                     <p class="mt-4 text-xl font-semibold text-gray-900">$51,925 / year</p>
                                     <a href="#"
                                         class="mt-4 text-blue-500 hover:text-blue-700 focus:outline-none focus:shadow-outline text-sm">View
