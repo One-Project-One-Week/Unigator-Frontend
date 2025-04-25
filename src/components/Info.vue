@@ -2,6 +2,12 @@
 import { ref } from 'vue';
 
 const activeTab = ref('overview');
+
+const rating = ref(0)
+const hover = ref(0)
+
+function setRating(value) {
+  rating.value = value}
 </script>
 
 <template>
@@ -32,7 +38,24 @@ const activeTab = ref('overview');
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-2">
                     <section v-if="activeTab === 'overview'" class="mb-8">
-                        <h2 class="text-2xl font-semibold text-gray-800 mb-4">About University of Oxford</h2>
+                        <div class="flex justify-between items-center mb-3">
+                            <h2 class="text-2xl font-semibold text-gray-800">About University of Oxford</h2>
+
+                            <div class="bg-white shadow-md rounded-md py-2 px-3">
+                                <p class="font-semibold mb-2">Rate this University</p>
+                                <div class="flex items-center gap-1">
+                                    <template v-for="star in 5" :key="star">
+                                        <button @click="setRating(star)" @mouseover="hover = star"
+                                            @mouseleave="hover = 0" class="text-2xl focus:outline-none">
+                                            <span
+                                                :class="star <= (hover || rating) ? 'text-yellow-400' : 'text-gray-300'">★</span>
+                                        </button>
+                                    </template>
+                                    <span class="ml-2 text-sm text-gray-600">{{ rating }} / 5</span>
+
+                                </div>
+                            </div>
+                        </div>
                         <p class="text-gray-700 mb-4">
                             The University of Oxford is a collegiate research university in Oxford, England. It is the
                             oldest university in the
@@ -112,53 +135,59 @@ const activeTab = ref('overview');
                         </p>
                         <h3 class="text-lg font-semibold text-gray-700 mb-2">Top Programs</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 6.042V3m0 2.042h-3m3 0h3m-3 6.042v-3m0 3v3m-3-3h3m3-3h-3m3 3H9" />
                                 </svg>
                                 Philosophy, Politics and Economics
-                            </div>
-                            <div class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            </a>
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
                                 Law
-                            </div>
-                            <div class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            </a>
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 Medicine
-                            </div>
-                            <div class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            </a>
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-13.5 3l6-3.5L12 3l-3.5 2.5-6 3.5M3 9l6-3.5L12 3l6 3.5 6-3.5M21 9l-9 6-9-6m1.5 12l-6-3.5L12 21l3.5-2.5 6-3.5" />
                                 </svg>
                                 English Literature
-                            </div>
-                            <div class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            </a>
+                            <a href="/programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                 </svg>
                                 History
-                            </div>
-                            <div class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
+                            </a>
+                            <a href="programs"
+                                class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                 </svg>
                                 Mathematics
-                            </div>
+                            </a>
                         </div>
                         <h3 class="text-lg font-semibold text-gray-700 mb-2">Degree Levels</h3>
                         <div class="flex space-x-4">
@@ -286,9 +315,6 @@ const activeTab = ref('overview');
                             <h4 class="font-semibold text-gray-700">Email</h4>
                             <p class="text-gray-600 text-sm">study@ox.ac.uk</p>
                         </div>
-                        <button class="bg-black text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-800">
-                            Request Information
-                        </button>
                     </section>
 
                     <section class="bg-white rounded-md shadow-md p-6">

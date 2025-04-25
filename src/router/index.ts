@@ -7,6 +7,11 @@ import Contact from '@/views/Contact.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 import Dashboard from '@/views/University Dashboard/Dashboard.vue'
+import ProgramDetail from '@/components/University Dashboard/ProgramDetail.vue'
+import Program from '@/components/Program.vue'
+import NewProgram from '@/components/University Dashboard/NewProgram.vue'
+import ProfileEdit from '@/components/University Dashboard/ProfileEdit.vue'
+import StudentProfile from '@/components/Student/StudentProfile.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +55,31 @@ const router = createRouter({
       path: '/university-dashboard',
       name: 'university-dashboard',
       component: Dashboard,
+    },
+    {
+      path: '/program-details',
+      name: 'program-details',
+      component: ProgramDetail,
+    },
+    {
+      path: '/programs',
+      name: 'programs',
+      component: Program,
+    },
+    {
+      path: '/new-program',
+      name: 'new-program',
+      component: NewProgram,
+    },
+    {
+      path: '/uni-profile-edit',
+      name: 'uni-profile-edit',
+      component: ProfileEdit,
+    },
+    {
+      path: '/student-profile',
+      name: 'student-profile',
+      component: StudentProfile,
     },
   ],
 })

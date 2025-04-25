@@ -44,7 +44,7 @@ const topUniversitiesData = computed(() => {
                 v-for="university in topUniversitiesData" :key="university.id"
                 :href="`/universities-details/${university.slug}`">
                 <div
-                    class="bg-white shadow-2xl rounded-lg overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl">
+                    class="bg-white h-80 shadow-2xl rounded-lg overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl">
                     <div class="h-[150px] relative w-full bg-gray-100 flex items-center justify-center">
                         <img v-if="university.logo"
                             :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${university.logo}`"
@@ -53,20 +53,23 @@ const topUniversitiesData = computed(() => {
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-black">{{ university.name }}</h3>
                         <p class="mt-1 text-sm text-black">
-                            <svg class="w-4 h-4 inline-block mr-1 align-text-bottom" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            </svg>
-                            {{ university.city }}, {{ university.country }}
+                            <span class="line-clamp-1">
+                                <svg class="w-4 h-4 inline-block mr-1 align-text-bottom" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+
+                                {{ university.city }}, {{ university.country }}
+                            </span>
                         </p>
                         <p class="mt-2 text-gray-600 dark:text-gray-600 text-sm line-clamp-2">
                             {{ university.description }}
                         </p>
-                        <div class="mt-4 flex items-center justify-between">
+                        <div class="mt-4 flex items-center justify-between items-end">
                             <div class="flex items-center text-yellow-500">
                                 <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
                                     <path
@@ -91,7 +94,7 @@ const topUniversitiesData = computed(() => {
         </div>
     </div>
 
-    <div class="mt-5">
+    <div class="my-5">
         <h1 class="text-3xl font-bold text-center">Find Programs</h1>
         <p class="text-center mt-4">Search through thousands of academic programs to find your perfect match.</p>
         <div class="flex justify-center mt-4">
