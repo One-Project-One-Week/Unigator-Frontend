@@ -228,7 +228,7 @@ const programsData = computed(() => {
 
                     <router-link :to="{ name: 'program-details', params: { id: program.id } }"
                         v-for="program in programsData" :key="program.id" href="/universities-details">
-                        <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                        <div class="w-[100%] h-80 bg-white rounded-md shadow-md overflow-hidden">
                             <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
                                 <!-- Images here -->
                             </div>

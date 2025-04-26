@@ -78,22 +78,26 @@ const { uniForm, logoPreview, loading, errors, handleLogoChange, handleUniRegist
 
             <div class="w-full flex gap-4">
                 <div class="w-[48%]">
-                    <label for="country" class="block text-gray-700 text-sm font-bold mb-1">Country</label>
-                    <input v-model="uniForm.country" type="text" id="country" placeholder="United States"
-                        class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        required />
-                    <div v-if="errors.country" class="text-red-500 text-xs mt-1">
-                        {{ errors.country[0] }}
+                    <label for="city" class="text-gray-700 text-sm font-bold mb-1">Country</label>
+                    <div>
+                        <select
+                            class="shadow rounded border-1 border-gray-200 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option>
+                                United State
+                            </option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="w-[48%]">
-                    <label for="city" class="block text-gray-700 text-sm font-bold mb-1">City</label>
-                    <input v-model="uniForm.city" type="text" id="city" placeholder="New York"
-                        class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        required />
-                    <div v-if="errors.city" class="text-red-500 text-xs mt-1">
-                        {{ errors.city[0] }}
+                    <label for="city" class="text-gray-700 text-sm font-bold mb-1">City</label>
+                    <div>
+                        <select
+                            class="shadow rounded border-1 border-gray-200 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option>
+                                New york
+                            </option>
+                        </select>
                     </div>
                 </div>
             </div>

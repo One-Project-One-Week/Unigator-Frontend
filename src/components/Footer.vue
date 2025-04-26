@@ -2,21 +2,22 @@
 </script>
 
 <template>
-    <footer class="bg-blue-200 text-white py-8">
+    <footer class="bg-[#e2eafc] py-8">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-7">
                 <div class="w-auto flex items-center justify-center md:justify-start">
                     <img src="/src/assets/images/logo.png" alt="Unigator Logo" class="h-15 md:h-19" />
                 </div>
 
-                <div class="w-full md:w-auto text-center text-lg text-white">
+                <div class="w-full md:w-auto text-center text-lg text-black">
                     Discover more about our innovative
-                    <span class="font-semibold text-blue-500">Unigator</span> platform,
+                    <span class="font-bold text-blue-500">Unigator</span> platform,
                     designed to connect students and universities seamlessly.
+                    <h3 class="text-blue-700">&copy; 2025 TallGuys</h3>
                 </div>
 
                 <div class="flex items-center justify-center md:justify-end gap-4">
-                    <span class="whitespace-nowrap">Follow us</span>
+                    <span class="whitespace-nowrap">Follow us:</span>
                     <div class="flex space-x-2">
                         <a href="#"
                             class="bg-blue-300 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center hover:bg-blue-400"

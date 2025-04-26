@@ -145,7 +145,7 @@
                             <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
                                 <img src="/src/assets/images/member/nyan.png" alt="" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Faker Gyi</h3>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Nyan Oak Soe</h3>
                             <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
                         </div>
 
