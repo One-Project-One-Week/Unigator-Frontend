@@ -1,10 +1,37 @@
 <script lang="ts" setup>
+import { useProgramStore } from '@/stores/useProgram';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+// const props = defineProps({
+//     program: {
+//         type: Object,
+//         required: true
+//     },
+//     loading: {
+//         type: Boolean,
+//         required: true
+//     }
+// })
 
+const router = useRouter()
+
+const { program, loading } = storeToRefs(useProgramStore())
+
+// console.log(program.value)
 </script>
 
 <template>
     <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+
         <div class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+            <button @click="router.back()"
+                class="flex ml-20 mb-4 items-center justify-center rounded-md px-4 py-3 bg-white shadow-md hover:bg-gray-100 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                </svg>
+            </button>
             <div class="max-w-7xl mx-auto">
                 <div
                     class="flex gap-5 items-center py-2 px-4 bg-white rounded-md mb-6 border-1 border-gray-300 shadow-sm">
