@@ -1,13 +1,23 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router';
 import Button from './ui/Button.vue';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useAuthStore } from '../stores/useAuth';
+import { storeToRefs } from 'pinia';
 
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
 };
+
+const authStore = useAuthStore();
+
+const { user } = storeToRefs(authStore);
+
+onMounted(() => {
+    authStore.fetchUser();
+});
 </script>
 
 <template>
@@ -47,15 +57,17 @@ const toggleMenu = () => {
             </div>
 
             <div class="hidden md:flex items-center justify-end gap-3 w-auto">
-                <RouterLink to="/register">
-                    <Button text="Register" intent="primary" />
-                </RouterLink>
-                <RouterLink to="/login">
-                    <Button text="Login" intent="outline" />
-                </RouterLink>
+                <div v-if="!user">
+                    <RouterLink to="/register">
+                        <Button text="Register" intent="primary" />
+                    </RouterLink>
+                    <RouterLink to="/login">
+                        <Button text="Login" intent="outline" />
+                    </RouterLink>
+                </div>
 
                 <!-- profile -->
-                <div class="flex" v-if="user">
+                <div v-else class="flex" v-if="user">
                     <div
                         class="py-2 px-4 border-2 border-blue-400 rounded-md text-blue-600 hover:bg-gray-200 cursor-pointer">
                         <h1>Profile</h1>
