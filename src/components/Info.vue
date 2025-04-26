@@ -227,43 +227,25 @@ watch(() => props.university, (newVal) => {
 
                         <section v-if="activeTab === 'campus-life'" class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Campus Life</h2>
-                            <p class="text-gray-700">University of Oxford offers a vibrant campus experience with
-                                numerous
-                                facilities, clubs, and activities for students.</p>
+                            <p class="text-gray-700">
+                                University of Oxford offers a vibrant campus experience with numerous facilities, clubs,
+                                and activities
+                                for students.
+                            </p>
 
-                            <div class="flex flex-wrap gap-4 justify-center align-center mt-10">
-                                <div class="w-[31%] h-32 border-1 border-black rounded-md flex-column">
-                                    <img class="w-full h-full rounded-md" src="../assets/images/slider.png" alt="">
+                            <div class="flex flex-wrap gap-4 justify-center mt-10">
+                                <div class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
+                                    <img class="w-full h-auto rounded-md" src="../assets/images/slider.png"
+                                        alt="Campus Life at Oxford" />
                                 </div>
-                                <div class="w-[31%] h-32 border-1 border-black rounded-md flex-column">
-                                    <img class="w-full h-full rounded-md" src="../assets/images/slider.png" alt="">
+                                <div class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
+                                    <img class="w-full h-auto rounded-md" src="../assets/images/slider.png"
+                                        alt="Campus Life at Oxford" />
                                 </div>
-                                <div class="w-[31%] h-32 border-1 border-black rounded-md flex-column">
-                                    <img class="w-full h-full rounded-md" src="../assets/images/slider.png" alt="">
+                                <div class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
+                                    <img class="w-full h-auto rounded-md" src="../assets/images/slider.png"
+                                        alt="Campus Life at Oxford" />
                                 </div>
-                            </div>
-
-                            <div class="flex-column mt-8">
-                                <h2 class="text-2xl font-semibold mb-4">Student Life</h2>
-                                <p class="text-md text-gray-700">
-                                    Oxford offers a unique collegiate system where students belong to both the
-                                    university
-                                    and one of the colleges. The university has over 400 clubs and societies covering a
-                                    wide
-                                    range of interests.
-                                </p>
-                            </div>
-
-                            <div class="flex-column">
-                                <h2 class="text-2xl font-semibold mt-8 mb-3">Facilities</h2>
-                                <ul class="ml-10 list-disc">
-                                    <li class="mt-2">Bodleian Library</li>
-                                    <li class="mt-2">Ashmolean Museum</li>
-                                    <li class="mt-2">Oxford University Museum of Natural History</li>
-                                    <li class="mt-2">Radcliffe Science Library</li>
-                                    <li class="mt-2">Oxford University Parks</li>
-                                    <li class="mt-2">Sheldonian Theatre</li>
-                                </ul>
                             </div>
                         </section>
                     </div>
