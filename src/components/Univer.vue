@@ -3,20 +3,13 @@ import { useUniStore } from '@/stores/useUni'
 import { storeToRefs } from 'pinia'
 import { onMounted, ref, computed, watch } from 'vue'
 import { RouterLink } from 'vue-router'
-import {
-    Select,
-    SelectContent,
-    SelectGroup,
-    SelectItem,
-    SelectLabel,
-    SelectTrigger,
-    SelectValue,
-} from '@/components/ui/select'
 import { useCountryAndCity } from '@/composables/getCountryAndCity'
+import { useProgramStore } from '@/stores/useProgram'
+import Program from '@/components/Program.vue'
 
 const uniStore = useUniStore()
+const programStore = useProgramStore()
 const { universities, pagination, loading } = storeToRefs(uniStore)
-
 const currentPage = ref(1)
 const perPage = ref(10)
 
@@ -154,7 +147,7 @@ const activeTab = ref('Universities')
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Country</h3>
                             <div>
-                                <Select v-model="selectedCountry">
+                                <!-- <Select v-model="selectedCountry">
                                     <SelectTrigger
                                         class="w-full border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                                         <SelectValue placeholder="Select Country" />
@@ -167,14 +160,20 @@ const activeTab = ref('Universities')
                                             </SelectItem>
                                         </SelectGroup>
                                     </SelectContent>
-                                </Select>
+                                </Select> -->
+                                <select v-model="selectedCountry"
+                                    class="w-full py-1 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
+                                    <option v-for="country in countries" :key="country.id" :value="country">
+                                        {{ country.name }}
+                                    </option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Cities</h3>
                             <div>
-                                <Select v-model="selectedCity">
+                                <!-- <Select v-model="selectedCity">
                                     <SelectTrigger :disabled="!selectedCountry"
                                         class="w-full border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                                         <SelectValue placeholder="Select City" />
@@ -187,7 +186,13 @@ const activeTab = ref('Universities')
                                             </SelectItem>
                                         </SelectGroup>
                                     </SelectContent>
-                                </Select>
+                                </Select> -->
+                                <select v-model="selectedCity" :disabled="!selectedCountry"
+                                    class="w-full py-1 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
+                                    <option v-for="city in cities" :key="city.id" :value="city.name">
+                                        {{ city.name }}
+                                    </option>
+                                </select>
                             </div>
                         </div>
 
