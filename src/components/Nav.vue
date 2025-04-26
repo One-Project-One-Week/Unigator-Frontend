@@ -103,7 +103,7 @@ onMounted(async () => {
                         </div>
                     </div>
                     <ul v-if="isProfileOpen"
-                        class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
+                        class="absolute right-0 mt-2 w-48 bg-[#84d2f6] rounded-md shadow-lg border border-gray-200 z-10 py-2">
                         <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">My University</a></li>
                         <li class="border-t border-gray-200"><a href="#"
                                 class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Log out</a></li>
