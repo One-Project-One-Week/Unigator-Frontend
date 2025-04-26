@@ -13,7 +13,7 @@ const toggleMenu = () => {
 <template>
     <section>
         <nav
-            class="w-full h-[80px] mx-auto bg-[#5C6BC0]  flex items-center justify-between fixed z-10 px-4 md:px-8 lg:px-16">
+            class="w-full h-[80px] mx-auto bg-white shadow-md flex items-center justify-between fixed z-10 px-4 md:px-8 lg:px-16">
             <div class="w-auto h-full flex items-center">
                 <RouterLink :to="{ name: 'home' }" class="flex items-center">
                     <img class="h-15 md:h-20" src="../assets/images/logo.png" alt="Logo" />

@@ -109,12 +109,15 @@ const activeTab = ref('Universities')
 </script>
 
 <template>
-    <div class="pt-[70px]">
-        <div class="h-[400px] bg-gray-50 py-16 flex-column align-center">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4 flex justify-center">Universities Directory</h1>
-            <p class="text-lg text-gray-600 flex justify-center">Browse our comprehensive database of universities from
-                around the world.
-            </p>
+    <div class="pt-[70px] relative">
+        <img class="w-full object-cover h-[400px]" src="/src/assets/images/university.png" alt="Universities Directory">
+        <div class="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center">
+            <div class=" bg-black/60 py-4 px-5 rounded-lg">
+                <h1 class="text-4xl font-bold text-white mb-4 text-center">Universities Directory</h1>
+                <p class="text-lg text-white text-center">Browse our comprehensive database of universities from around
+                    the
+                    world.</p>
+            </div>
         </div>
     </div>
 

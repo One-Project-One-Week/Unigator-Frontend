@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
         {
             'bg-blue-500 hover:bg-blue-600 text-white': intent === 'primary',
             'bg-gray-500 hover:bg-gray-600 text-white': intent === 'secondary',
-            'border-2 border-blue-500 text-blue-500 hover:bg-blue-50': intent === 'outline'
+            'border-2 border-blue-500 text-black hover:bg-blue-50 hover:text-black': intent === 'outline'
         },
         {
             'opacity-50 cursor-not-allowed': disabled,
