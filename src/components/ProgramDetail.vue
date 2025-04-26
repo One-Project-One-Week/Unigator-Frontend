@@ -23,112 +23,112 @@ const { program, loading } = storeToRefs(useProgramStore())
 </script>
 
 <template>
-    <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
-
-        <div class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <section class="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Back Button -->
             <button @click="router.back()"
-                class="flex ml-20 mb-4 items-center justify-center rounded-md px-4 py-3 bg-white shadow-md hover:bg-gray-100 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-left" viewBox="0 0 16 16">
+                class="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
                 </svg>
+                <span>Back</span>
             </button>
-            <div class="max-w-7xl mx-auto">
-                <div
-                    class="flex gap-5 items-center py-2 px-4 bg-white rounded-md mb-6 border-1 border-gray-300 shadow-sm">
-                    <div>
-                        <div class="bg-gray-300 w-32 h-32 rounded-md mb-4 flex items-center justify-center">
-                            <div class="w-28 h-28 bg-gray-400 rounded-sm overflow-hidden">
-                                <img class="rounded-sm w-full h-full object-cover"
-                                    :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${program?.universities.logo}`"
-                                    alt="">
-                            </div>
+
+            <!-- Program Header -->
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 rounded-lg overflow-hidden bg-gray-100">
+                            <img class="w-full h-full object-cover"
+                                :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${program?.universities.logo}`"
+                                :alt="program?.universities.name">
                         </div>
                     </div>
-                    <div>
-                        <h2 class="text-2xl font-bold text-gray-900">{{ program?.name }}</h2>
-                        <h2 class="text-lg font-bold text-gray-900 mb-4">{{ program?.universities.name }}</h2>
-                        <div class="flex items-center mb-4">
-                            <span class="text-sm bg-blue-200 py-1 px-2 rounded-sm mr-1">{{ program?.level }}</span>
-                            <span class="text-sm bg-green-200 py-1 px-2 rounded-sm">{{ program?.degree_type }}</span>
+                    <div class="flex-1">
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ program?.name }}</h1>
+                        <h2 class="text-xl text-gray-600 mb-4">{{ program?.universities.name }}</h2>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                                {{ program?.level }}
+                            </span>
+                            <span class="px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                {{ program?.degree_type }}
+                            </span>
                         </div>
-                        <div class="flex gap-4 mb-8">
-                            <a :href="program?.universities?.application_link"
-                                class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer">Apply
-                                Now</a>
-                        </div>
+                        <a :href="program?.universities?.application_link"
+                            class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
+                            Apply Now
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="w-full flex gap-5">
-                    <div class="w-[70%] flex flex-col bg-white py-3 px-6 rounded-md border-1 border-gray-300 shadow-sm">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">Program Overview</h2>
-                        <div class="flex fles-col gap-3">
-                            <div class="">
-                                <div class="space-y-4">
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-semibold text-xl text-gray-700">Degree:</span>
-                                        <span class="text-gray-900 font-medium">{{ program?.degree_type }}</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-semibold text-xl text-gray-700">{{ program?.universities.name
-                                            }}</span>
-                                        <span class="text-gray-900">Harvard University</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-semibold text-xl text-gray-700">Duration:</span>
-                                        <span class="text-gray-900">{{ program?.duration }}</span>
-                                    </div>
-                                    <div class="flex items-start gap-2">
-                                        <span class="font-semibold text-xl text-gray-700">Intake:</span>
-                                        <div class="flex flex-col space-y-1">
-                                            <div v-for="intake in program?.intake" :key="intake">
-                                                <span class="text-gray-900 mt-1">{{ intake }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <span class="font-semibold text-xl text-gray-700">Level:</span>
-                                        <span class="text-gray-900">{{ program?.level }}</span>
-                                    </div>
-                                    <div class="flex items-start gap-2">
-                                        <span class="font-semibold text-xl text-gray-700">Requirement:</span>
-                                        <div class="flex  mt-1 gap-3">
-                                            <div v-for="requirement in program?.application_requirement"
-                                                :key="requirement">
-                                                <span class="text-white bg-red-500 px-3 rounded-md">{{ requirement
-                                                }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
+            <!-- Main Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Program Overview -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Program Overview</h2>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-center gap-3">
+                                <span class="text-gray-500 font-medium">Degree:</span>
+                                <span class="text-gray-900 font-medium">{{ program?.degree_type }}</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-gray-500 font-medium">Duration:</span>
+                                <span class="text-gray-900">{{ program?.duration }}</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-gray-500 font-medium">Level:</span>
+                                <span class="text-gray-900">{{ program?.level }}</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="text-gray-500 font-medium">Intake:</span>
+                                <div class="flex flex-wrap gap-2">
+                                    <span v-for="intake in program?.intake" :key="intake"
+                                        class="px-3 py-1 bg-gray-100 rounded-full text-sm">
+                                        {{ intake }}
+                                    </span>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-                    <div class="w-[30%] bg-white border-1 shadow-sm border-gray-300 rounded-md py-3 px-5">
-                        <h1 class="text-2xl font-bold text-gray-900 mb-6">Application Guideline</h1>
-                        <ul>
-                            <!-- Guideline Loop  -->
-                            <li class="list-disc ml-5 mb-4">
-                                <p v-html="program?.application_guideline"></p>
-                            </li>
-                        </ul>
-                        <div class="flex gap-4 mb-8">
-                            <button
-                                class="w-full bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded cursor-pointer">Apply
-                                Now</button>
+                        <div class="pt-4">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-3">Requirements</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span v-for="requirement in program?.application_requirement" :key="requirement"
+                                    class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">
+                                    {{ requirement }}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full bg-white shadow-sm border-1 border-gray-300 mt-4 rounded-md py-3 px-5">
-                    <h1 class="text-2xl font-bold text-gray-900 mb-6">Program Cariculum</h1>
-                    <div v-for="detail in program?.detail" :key="detail" class="flex flex-col gap-2 mb-4">
-                        <h1 class="text-xl font-semibold">{{ detail.year }}</h1>
-                        <p class="text-lg">Tuition fee : {{ detail.tuition_fees }}</p>
-                        <ul class="list-disc ml-5">
-                            <li v-for="subject in detail.subject" class="text-lg">
+
+                <!-- Application Guidelines -->
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Application Guidelines</h2>
+                    <div class="prose prose-blue max-w-none">
+                        <div v-html="program?.application_guideline" class="text-gray-600"></div>
+                    </div>
+                    <a :href="program?.universities?.application_link"
+                        class="mt-6 inline-flex items-center justify-center w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Program Curriculum -->
+            <div class="mt-8 bg-white rounded-xl shadow-sm p-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Program Curriculum</h2>
+                <div class="space-y-8">
+                    <div v-for="detail in program?.detail" :key="detail" class="border-l-4 border-blue-500 pl-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ detail.year }}</h3>
+                        <p class="text-gray-600 mb-4">Tuition fee: <span class="font-medium">{{ detail.tuition_fees
+                                }}</span></p>
+                        <ul class="space-y-2">
+                            <li v-for="subject in detail.subject" class="flex items-start gap-2 text-gray-700">
+                                <span class="text-blue-500">•</span>
                                 {{ subject }}
                             </li>
                         </ul>
@@ -136,6 +136,5 @@ const { program, loading } = storeToRefs(useProgramStore())
                 </div>
             </div>
         </div>
-
     </section>
 </template>

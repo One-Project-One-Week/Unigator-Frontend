@@ -196,10 +196,8 @@ watch(() => props.university, (newVal) => {
                         <section class="bg-white rounded-xl shadow-sm p-5">
                             <h3 class="text-base sm:text-lg font-bold text-gray-800 mb-5">Similar Universities</h3>
                             <div class="space-y-3">
-                                <router-link
-                                    v-if="university?.similar_universities && university.similar_universities.length > 0"
+                                <div v-if="university?.similar_universities && university.similar_universities.length > 0"
                                     v-for="suniversity in university.similar_universities"
-                                    :to="{ name: 'university-details', params: { slug: suniversity.slug } }"
                                     class="block hover:bg-gray-50 p-3 rounded-xl transition-colors">
                                     <div class="flex items-center space-x-3">
                                         <div
@@ -214,7 +212,7 @@ watch(() => props.university, (newVal) => {
                                                 suniversity?.country }}</p>
                                         </div>
                                     </div>
-                                </router-link>
+                                </div>
                                 <div v-else class="text-gray-500 text-center py-4">
                                     <p class="text-sm">No similar universities found</p>
                                 </div>

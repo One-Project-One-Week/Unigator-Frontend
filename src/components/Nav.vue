@@ -104,8 +104,9 @@ onMounted(async () => {
                     </div>
                     <ul v-if="isProfileOpen"
                         class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
-                        <li><router-link to="/universities" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">My
-                                University</router-link></li>
+                        <li><a href="https://tallguys.newway.com.mm/university" target="_blank"
+                                class="block px-4 py-2 text-gray-800 hover:bg-gray-100">My
+                                University</a></li>
                         <li class="border-t border-gray-200"><a href="#" @click="authStore.logout"
                                 class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Log out</a></li>
                     </ul>
@@ -157,15 +158,11 @@ onMounted(async () => {
                     </div>
                     <ul v-if="isProfileOpen"
                         class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
-                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" @click="toggleMenu">My
-                                Account</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                                @click="toggleMenu">Profile</a></li>
-                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                                @click="toggleMenu">Settings</a></li>
-                        <li class="border-t border-gray-200"><a href="#"
-                                class="block px-4 py-2 text-gray-800 hover:bg-gray-100" @click="toggleMenu">Log out</a>
-                        </li>
+                        <li><a href="https://tallguys.newway.com.mm/university" target="_blank"
+                                class="block px-4 py-2 text-gray-800 hover:bg-gray-100" @click="toggleMenu">My
+                                University</a></li>
+                        <li class="border-t border-gray-200"><a href="#" @click="authStore.logout"
+                                class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Log out</a></li>
                     </ul>
                 </div>
             </div>

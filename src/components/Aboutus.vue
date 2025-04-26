@@ -3,167 +3,206 @@
 
 <template>
     <div class="pt-[60px]">
+        <!-- Hero Section -->
         <div class="relative">
-            <img class="w-full object-cover h-[500px]" src="/src/assets/images/aboutus.png " alt="About Unigator">
-            <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center bg-rgba(0, 0, 0, 0.25)">
-                <div class="flex flex-col justify-start items-center h-full pt-40">
-                    <h1 class="text-4xl font-bold text-white mb-2 text-center">About Unigator</h1>
-                    <p class="text-lg text-white text-center">Empowering students to make informed decisions about their
-                        education journey.</p>
+            <img class="w-full object-cover h-[600px]" src="/src/assets/images/aboutus.png" alt="About Unigator">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30">
+                <div class="flex flex-col justify-center items-center h-full px-4">
+                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 text-center tracking-tight">About Unigator
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white/90 text-center max-w-2xl">Empowering students to make
+                        informed decisions about their education journey.</p>
                 </div>
             </div>
         </div>
 
-        <section class="py-12 md:py-20">
+        <!-- Mission Section -->
+        <section class="py-16 md:py-24 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">Our Mission</h2>
-                        <p class="text-lg text-gray-700">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight">Our Mission</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed">
                             At Unigator, we believe that every student deserves the opportunity to pursue higher
                             education, regardless of their background or location. Our mission is to empower students
                             around the world by providing them with the resources and support they need to connect with
                             universities and achieve their academic dreams.
                         </p>
-                        <ul class="list-disc list-inside mt-6 text-gray-600">
-                            <li>Comprehensive university profiles</li>
-                            <li>Advanced program search tools</li>
-                            <li>Honest rankings and reviews</li>
-                            <li>Personalized guidance and support</li>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Comprehensive university profiles
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Advanced program search tools
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Honest rankings and reviews
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                Personalized guidance and support
+                            </li>
                         </ul>
                     </div>
                     <div class="relative">
-                        <img src="/src/assets/images/havard.png" alt="University students working on a laptop"
-                            class="rounded-lg shadow-lg w-full max-w-2xl mx-auto" />
+                        <img src="/src/assets/images/member/team.jpg" alt="University students working on a laptop"
+                            class="rounded-2xl shadow-2xl w-full max-w-2xl mx-auto transform hover:scale-105 transition-transform duration-300" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-gray-100 py-4 md:py-10 mt-5">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">What We Offer</h2>
-                    <p class="text-gray-600 text-lg">Comprehensive tools and resources to help you find your perfect
-                        university match.</p>
+        <!-- What We Offer Section -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">What We Offer</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive tools and resources to help you
+                        find your perfect university match.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-hospital mb-4" viewBox="0 0 16 16">
-                                <path
-                                    d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1zM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25zM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25z" />
-                                <path
-                                    d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1zm2 14h2v-3H7zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1zm0-14H6v1h4zm2 7v7h3V8zm-8 7V8H1v7z" />
-                            </svg>
-                            <h3 class="text-2xl font-semibold text-gray-800">University Profiles</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">University Profiles</h3>
+                            <p class="text-gray-600">Detailed information on thousands of universities worldwide,
+                                including programs, admissions requirements, tuition costs, and campus facilities.</p>
                         </div>
-                        <p class="text-gray-600">Detailed information on thousands of universities worldwide.</p>
-                        <p class="list-disc list-inside mt-2 text-gray-600">
-                            Access comprehensive profiles including programs, admissions requirements, tuition
-                            costs, campus facilities, and more.
-                        </p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-book mb-4" viewBox="0 0 16 16">
-                                <path
-                                    d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
-                            </svg>
-                            <h3 class="text-2xl font-semibold text-gray-800">Program Finder</h3>
+
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Program Finder</h3>
+                            <p class="text-gray-600">Search for specific academic programs across all universities that
+                                match your interests, career goals, and academic background.</p>
                         </div>
-                        <p class="text-gray-600">Search for specific academic programs across all universities.</p>
-                        <p class="list-disc list-inside mt-2 text-gray-600">
-                            Find the perfect program that matches your interests, career goals, and academic
-                            background.
-                        </p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-award mb-4" viewBox="0 0 16 16">
-                                <path
-                                    d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z" />
-                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z" />
-                            </svg>
-                            <h3 class="text-2xl font-semibold text-gray-800">Rankings & Reviews</h3>
+
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Rankings & Reviews</h3>
+                            <p class="text-gray-600">Compare universities based on various ranking systems and explore
+                                authentic student reviews and testimonials.</p>
                         </div>
-                        <p class="text-gray-600">Compare universities based on various ranking systems.</p>
-                        <p class="list-disc list-inside mt-2 text-gray-600">
-                            Explore global and regional university rankings, along with authentic student reviews
-                            and testimonials.
-                        </p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                class="bi bi-people mb-4" viewBox="0 0 16 16">
-                                <path
-                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
-                            </svg>
-                            <h3 class="text-2xl font-semibold text-gray-800">Application Guidance</h3>
+
+                    <div
+                        class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Application Guidance</h3>
+                            <p class="text-gray-600">Get expert advice on preparing applications, writing personal
+                                statements, and meeting deadlines.</p>
                         </div>
-                        <p class="text-gray-600">Step-by-step guidance through the application process.</p>
-                        <p class="list-disc list-inside mt-2 text-gray-600">
-                            Get expert advice on preparing applications, writing personal statements, and meeting
-                            deadlines.
-                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section>
-            <div class="bg-white py-12">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center">
-                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Team</h2>
-                        <p class="mt-2 text-lg text-gray-500">Meet the dedicated professionals behind UniConnect.</p>
+        <!-- Team Section -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4">Our Team</h2>
+                    <p class="text-xl text-gray-600">Meet the dedicated professionals behind Unigator</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <div class="text-center group">
+                        <div
+                            class="relative w-40 h-40 mx-auto rounded-full bg-gray-100 overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-300">
+                            <img src="/src/assets/images/member/nyi.png" alt="Nyi Nyi Myat"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Nyi Nyi Myat</h3>
+                        <p class="text-blue-500 font-medium">Frontend</p>
                     </div>
-                    <div class="mt-10 flex flex-wrap justify-center gap-20">
-                        <div class="text-center">
-                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
-                                <img src="/src/assets/images/member/nyi.png" alt=""
-                                    class="w-full h-full object-cover" />
-                            </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Nyi Nyi Myat</h3>
-                            <p class="mt-1 text-sm text-blue-500 font-semibold">Frontend</p>
-                        </div>
 
-                        <div class="text-center">
-                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
-                                <img src="/src/assets/images/member/phone.png" alt=""
-                                    class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Phone Htut Khaung</h3>
-                            <p class="mt-1 text-sm text-blue-500 font-semibold">Frontend</p>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-40 h-40 mx-auto rounded-full bg-gray-100 overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-300">
+                            <img src="/src/assets/images/member/phone.png" alt="Phone Htut Khaung"
+                                class="w-full h-full object-cover" />
                         </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Phone Htut Khaung</h3>
+                        <p class="text-blue-500 font-medium">Frontend</p>
+                    </div>
 
-                        <div class="text-center">
-                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
-                                <img src="/src/assets/images/member/nyan.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Nyan Oak Soe</h3>
-                            <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-40 h-40 mx-auto rounded-full bg-gray-100 overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-300">
+                            <img src="/src/assets/images/member/nyan.png" alt="Nyan Oak Soe"
+                                class="w-full h-full object-cover" />
                         </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Nyan Oak Soe</h3>
+                        <p class="text-blue-500 font-medium">Backend</p>
+                    </div>
 
-                        <div class="text-center">
-                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
-                                <img src="/src/assets/images/member/khai.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Khai Sian Taang</h3>
-                            <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-40 h-40 mx-auto rounded-full bg-gray-100 overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-300">
+                            <img src="/src/assets/images/member/khai.png" alt="Khai Sian Taang"
+                                class="w-full h-full object-cover" />
                         </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Khai Sian Taang</h3>
+                        <p class="text-blue-500 font-medium">Backend</p>
+                    </div>
 
-                        <div class="text-center">
-                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
-                                <img src="/src/assets/images/member/wai.png" alt="" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Wai Yan Paing</h3>
-                            <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
+                    <div class="text-center group">
+                        <div
+                            class="relative w-40 h-40 mx-auto rounded-full bg-gray-100 overflow-hidden mb-6 transform group-hover:scale-105 transition-transform duration-300">
+                            <img src="/src/assets/images/member/wai.png" alt="Wai Yan Paing"
+                                class="w-full h-full object-cover" />
                         </div>
+                        <h3 class="text-xl font-semibold text-gray-900">Wai Yan Paing</h3>
+                        <p class="text-blue-500 font-medium">Backend</p>
                     </div>
                 </div>
             </div>
