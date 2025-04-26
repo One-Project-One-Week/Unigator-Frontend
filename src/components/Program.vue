@@ -184,7 +184,7 @@ const programsData = computed(() => {
                     </div>
 
                     <button @click="fetchPrograms(1)"
-                        class="bg-black text-white py-2 px-4 rounded-md w-full hover:bg-gray-800 text-sm font-medium">
+                        class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md focus:outline-none hover:ring-2 hover:ring-blue-400 focus:ring-offset-2 hover:bg-blue-500">
                         Apply Filters
                     </button>
                 </div>
@@ -262,7 +262,7 @@ const programsData = computed(() => {
 
                 <div class="mt-8 flex justify-center items-center space-x-2">
                     <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
-                        class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                        class="px-3 py-1 rounded-md border cursor-pointer hover:bg-white transition-all ease-in-out border-blue-400 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
                         Previous
                     </button>
 
@@ -270,15 +270,15 @@ const programsData = computed(() => {
                         <button @click="handlePageChange(page)" :class="[
                             'px-3 py-1 rounded-md text-sm font-medium',
                             currentPage === page
-                                ? 'bg-black text-white'
-                                : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                                ? 'bg-blue-700 text-white'
+                                : 'border border-blue-700 text-gray-700 hover:bg-gray-50'
                         ]">
                             {{ page }}
                         </button>
                     </template>
 
                     <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
-                        class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                        class="px-3 py-1 rounded-md border border-blue-400 cursor-pointer text-sm font-medium text-gray-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed">
                         Next
                     </button>
                 </div>

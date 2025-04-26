@@ -44,7 +44,7 @@ const topUniversitiesData = computed(() => {
                 v-for="university in topUniversitiesData" :key="university.id"
                 :href="`/universities-details/${university.slug}`">
                 <div
-                    class="bg-white h-80 shadow-2xl rounded-lg overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl">
+                    class="bg-white h-90 shadow-2xl rounded-lg overflow-hidden cursor-pointer transition-shadow duration-300 hover:shadow-xl">
                     <div class="h-[150px] relative w-full bg-gray-100 flex items-center justify-center">
                         <img v-if="university.logo"
                             :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${university.logo}`"
@@ -79,7 +79,7 @@ const topUniversitiesData = computed(() => {
                                     university.rating.toFixed(1) : 'N/A' }}{{ university.rating ? '/5' : '' }}</span>
                             </div>
                             <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100">#{{
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-red-800 dark:text-red-100">#{{
                                     university.ranking ? university.ranking : 'N/A' }}</span>
                         </div>
                     </div>

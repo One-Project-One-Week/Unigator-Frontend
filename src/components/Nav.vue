@@ -52,8 +52,6 @@ onMounted(async () => {
                     active-class="text-blue-500" :to="{ name: 'universities' }">Universities</RouterLink>
                 <RouterLink class="font-bold text-lg text-black no-underline hover:text-blue-500"
                     active-class="text-blue-500" to="/about">About</RouterLink>
-                <RouterLink class="font-bold text-lg text-black no-underline hover:text-blue-500"
-                    active-class="text-blue-500" to="/contact">Contact</RouterLink>
             </div>
 
             <div class="hidden md:flex items-center justify-end gap-3 w-auto">
@@ -70,9 +68,21 @@ onMounted(async () => {
 
                 <!-- profile -->
                 <div v-else class="flex" v-if="user">
-                    <div
-                        class="py-2 px-4 border-2 border-blue-400 rounded-md text-blue-600 hover:bg-gray-200 cursor-pointer">
-                        <h1>Profile</h1>
+                    <div class="py-2 px-4 border-2 border-gray-200 rounded-md hover:bg-gray-200 cursor-pointer">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="rounded-full h-10 w-10 bg-gray-100 flex items-center justify-center hover:bg-gray-300 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col items-start">
+                                <span class="text-gray-700 font-medium">Sarah Johnson</span>
+                                <span class="text-gray-500 text-sm">sarah.j@example.com</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
