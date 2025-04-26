@@ -30,6 +30,8 @@ export interface University {
         name: string,
         logo: string,
         slug: string,
+        city: string,
+        country: string,
     }[],
     website_link: string,
     address: string,

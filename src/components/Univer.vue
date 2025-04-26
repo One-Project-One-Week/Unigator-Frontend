@@ -259,7 +259,7 @@ const activeTab = ref('Universities')
                             <div class="w-[100%] h-90 bg-white rounded-md shadow-md overflow-hidden">
                                 <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
                                     <img :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${university.logo}`"
-                                        alt="">
+                                        class="w-full h-full object-cover" :alt="university.name">
                                 </div>
                                 <div class="px-4 py-2">
                                     <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university?.name }}

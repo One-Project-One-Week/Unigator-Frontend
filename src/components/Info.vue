@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
 import type { University } from '@/types/university';
+import { RouterLink } from 'vue-router';
 
 const activeTab = ref('overview');
 
@@ -159,7 +160,7 @@ watch(() => props.university, (newVal) => {
                             <div class="flex space-x-4">
                                 <button v-for="level in university?.levels"
                                     class="bg-gray-200 rounded-full px-3 py-1 text-gray-700 text-sm">{{
-                                    level }}</button>
+                                        level }}</button>
                             </div>
                         </section>
 
@@ -228,22 +229,14 @@ watch(() => props.university, (newVal) => {
                         <section v-if="activeTab === 'campus-life'" class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Campus Life</h2>
                             <p class="text-gray-700">
-                                University of Oxford offers a vibrant campus experience with numerous facilities, clubs,
-                                and activities
-                                for students.
+                                {{ university?.user.bio }}
                             </p>
 
                             <div class="flex flex-wrap gap-4 justify-center mt-10">
-                                <div class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
-                                    <img class="w-full h-auto rounded-md" src="../assets/images/slider.png"
-                                        alt="Campus Life at Oxford" />
-                                </div>
-                                <div class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
-                                    <img class="w-full h-auto rounded-md" src="../assets/images/slider.png"
-                                        alt="Campus Life at Oxford" />
-                                </div>
-                                <div class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
-                                    <img class="w-full h-auto rounded-md" src="../assets/images/slider.png"
+                                <div v-for="image in university?.image"
+                                    class="w-full sm:w-[48%] md:w-[31%] h-auto rounded-md overflow-hidden">
+                                    <img class="w-full h-auto rounded-md"
+                                        :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${image}`"
                                         alt="Campus Life at Oxford" />
                                 </div>
                             </div>
@@ -269,17 +262,23 @@ watch(() => props.university, (newVal) => {
 
                         <section class="bg-white rounded-md shadow-md p-6">
                             <h3 class="text-lg font-semibold text-gray-800 mb-4">Similar Universities</h3>
-                            <div v-if="university?.similar_universities && typeof university.similar_universities === 'string' && university.similar_universities !== '{}'"
-                                v-for="suniversity in JSON.parse(university.similar_universities)"
-                                class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-gray-300 rounded-md flex items-center justify-center">
-                                    <img src="../assets/images/cambridge.png" alt="">
+                            <router-link
+                                v-if="university?.similar_universities && university.similar_universities.length > 0"
+                                v-for="suniversity in university.similar_universities"
+                                :to="{ name: 'university-details', params: { slug: suniversity.slug } }">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gray-300 rounded-md flex items-center justify-center">
+                                        <img :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${suniversity.logo}`"
+                                            class="w-full h-full object-cover" :alt="suniversity.name">
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-700 text-sm">{{ suniversity.name }}</h4>
+                                        <p class="text-gray-600 text-xs">{{ suniversity?.city }}, {{
+                                            suniversity?.country }}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-700 text-sm">{{ suniversity.name }}</h4>
-                                    <p class="text-gray-600 text-xs">Cambridge, United Kingdom</p>
-                                </div>
-                            </div>
+                            </router-link>
                             <div v-else>
                                 <p>No similar universities found</p>
                             </div>
