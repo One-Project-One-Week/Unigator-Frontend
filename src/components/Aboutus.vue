@@ -3,11 +3,17 @@
 
 <template>
     <div class="pt-[60px]">
-        <section class="w-full h-[500px] bg-slate-400 flex flex-col justify-center">
-            <h1 class="flex justify-center text-4xl font-bold text-black">About Unigator</h1>
-            <p class="flex justify-center text-lg">Empowering students to make informed decisions about their education
-                journey.</p>
-        </section>
+        <div class="relative">
+            <img class="w-full object-cover h-[500px]" src="/src/assets/images/aboutus.png "
+                alt="About Unigator">
+            <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center bg-rgba(0, 0, 0, 0.25)">
+                <div class="flex flex-col justify-start items-center h-full pt-40">
+                    <h1 class="text-4xl font-bold text-white mb-2 text-center">About Unigator</h1>
+                    <p class="text-lg text-white text-center">Empowering students to make informed decisions about their
+                        education journey.</p>
+                </div>
+            </div>
+        </div>
 
         <section class="py-12 md:py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -141,7 +147,7 @@
                                 <img src="/src/assets/images/member/nyan.png" alt="" class="w-full h-full object-cover">
                             </div>
                             <h3 class="mt-4 text-lg font-medium text-gray-900">Nyan Oak SOe</h3>
-                            <p class="mt-1 text-sm text-blue-500 font-semibold">Frontend</p>
+                            <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
                         </div>
 
                         <div class="text-center">

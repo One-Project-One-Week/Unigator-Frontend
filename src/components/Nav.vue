@@ -23,7 +23,7 @@ onMounted(() => {
 <template>
     <section>
         <nav
-            class="w-full h-[80px] mx-auto bg-[#5C6BC0]  flex items-center justify-between fixed z-10 px-4 md:px-8 lg:px-16">
+            class="w-full h-[80px] mx-auto bg-white shadow-md flex items-center justify-between fixed z-10 px-4 md:px-8 lg:px-16">
             <div class="w-auto h-full flex items-center">
                 <RouterLink :to="{ name: 'home' }" class="flex items-center">
                     <img class="h-15 md:h-20" src="../assets/images/logo.png" alt="Logo" />
@@ -58,12 +58,14 @@ onMounted(() => {
 
             <div class="hidden md:flex items-center justify-end gap-3 w-auto">
                 <div v-if="!user">
-                    <RouterLink to="/register">
-                        <Button text="Register" intent="primary" />
-                    </RouterLink>
-                    <RouterLink to="/login">
-                        <Button text="Login" intent="outline" />
-                    </RouterLink>
+                    <div class="flex gap-3 ">
+                        <RouterLink to="/register">
+                            <Button text="Register" intent="primary" />
+                        </RouterLink>
+                        <RouterLink to="/login">
+                            <Button text="Login" intent="outline" />
+                        </RouterLink>
+                    </div>
                 </div>
 
                 <!-- profile -->
