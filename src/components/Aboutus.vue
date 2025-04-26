@@ -9,27 +9,33 @@
                 journey.</p>
         </section>
 
-        <section class="w-full flex mt-20 justify-center gap-10">
-            <div class="w-[45%] h-auto flex flex-col justify-center">
-                <h1 class="text-3xl font-bold">Our Mission</h1>
-                <p class="text-justify mt-4">
-                    At UniConnect, we believe that access to comprehensive, accurate information about universities is
-                    essential for students to make the right choices for their future. Our mission is to connect
-                    prospective students with universities worldwide by providing detailed, up-to-date information about
-                    academic programs, campus life, admissions requirements, and more.
-                </p>
-                <br>
-                <p>
-                    We strive to be the most trusted resource for university information, helping students navigate the
-                    complex process of selecting and applying to higher education institutions.
-                </p>
-            </div>
-            <div class="w-[45%] h-full">
-                <img class="rounded-md" src="../assets/images/havard.png" alt="">
+        <section class="py-12 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">Our Mission</h2>
+                        <p class="text-lg text-gray-700">
+                            At UniConnect, we believe that every student deserves the opportunity to pursue higher
+                            education, regardless of their background or location. Our mission is to empower students
+                            around the world by providing them with the resources and support they need to connect with
+                            universities and achieve their academic dreams.
+                        </p>
+                        <ul class="list-disc list-inside mt-6 text-gray-600">
+                            <li>Comprehensive university profiles</li>
+                            <li>Advanced program search tools</li>
+                            <li>Honest rankings and reviews</li>
+                            <li>Personalized guidance and support</li>
+                        </ul>
+                    </div>
+                    <div class="relative">
+                        <img src="/src/assets/images/havard.png" alt="University students working on a laptop"
+                            class="rounded-lg shadow-lg w-full max-w-2xl mx-auto" />
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="bg-gray-50 py-12 md:py-20 mt-10">
+        <section class="bg-gray-100 py-4 md:py-10 mt-5">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 mb-4">What We Offer</h2>
@@ -99,6 +105,60 @@
                             Get expert advice on preparing applications, writing personal statements, and meeting
                             deadlines.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="bg-white py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Our Team</h2>
+                        <p class="mt-2 text-lg text-gray-500">Meet the dedicated professionals behind UniConnect.</p>
+                    </div>
+                    <div class="mt-10 flex flex-wrap justify-center gap-20">
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
+                                <img src="/src/assets/images/member/nyi.png" alt=""
+                                    class="w-full h-full object-cover" />
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Nyi Nyi Myat</h3>
+                            <p class="mt-1 text-sm text-blue-500 font-semibold">Frontend</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
+                                <img src="/src/assets/images/member/phone.png" alt=""
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Phone Htut Khaung</h3>
+                            <p class="mt-1 text-sm text-blue-500 font-semibold">Frontend</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
+                                <img src="/src/assets/images/member/nyan.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Nyan Oak SOe</h3>
+                            <p class="mt-1 text-sm text-blue-500 font-semibold">Frontend</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
+                                <img src="/src/assets/images/member/khai.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Khai Sian Taang</h3>
+                            <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
+                                <img src="/src/assets/images/member/wai.png" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Wai Yan Paing</h3>
+                            <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
+                        </div>
                     </div>
                 </div>
             </div>

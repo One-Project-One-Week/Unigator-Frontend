@@ -13,7 +13,7 @@
                     for your academic journey, career goals, and personal growth—all in one place.
                 </p>
                 <button
-                    class="mt-8 px-4 lg:px-6 py-2 lg:py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-700 shadow-md transition-shadow duration-300 hover:shadow-lg">
+                    class="mt-8 px-4 lg:px-6 py-2 lg:py-3 bg-blue-700 cursor-pointer text-white font-bold rounded-lg hover:bg-blue-500 shadow-md transition-shadow duration-300 hover:shadow-lg">
                     Start a Course
                 </button>
             </section>

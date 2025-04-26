@@ -118,16 +118,16 @@ const activeTab = ref('Universities')
         </div>
     </div>
 
-    <div class="w-[100%] flex justify-center mx-auto py-4 px-4 bg-slate-400">
+    <div class="flex justify-center mx-auto py-4 px-4 mt-8 bg-gray-100">
         <div class="w-[40%] flex justify-center gap-10">
-            <ul class="flex space-x-4">
+            <ul class="flex space-x-4 text-lg font-semibold">
                 <li @click="activeTab = 'Universities'" class="cursor-pointer">
                     <a
-                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Universities', 'text-white hover:text-blue-500': activeTab !== 'Universities' }">Universities</a>
+                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Universities', 'text-black hover:text-blue-500': activeTab !== 'Universities' }">Universities</a>
                 </li>
                 <li @click="activeTab = 'Programs'" class="cursor-pointer">
                     <a
-                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Programs', 'text-white hover:text-blue-500': activeTab !== 'Programs' }">Programs</a>
+                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Programs', 'text-black hover:text-blue-500': activeTab !== 'Programs' }">Programs</a>
                 </li>
             </ul>
         </div>
@@ -210,7 +210,7 @@ const activeTab = ref('Universities')
                             </div>
                         </div>
                         <button @click="fetchUniversities(1)"
-                            class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer">
+                            class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md focus:outline-none hover:ring-2 hover:ring-blue-400 focus:ring-offset-2 hover:bg-blue-500">
                             Apply Filters
                         </button>
                     </div>
@@ -227,7 +227,7 @@ const activeTab = ref('Universities')
                                         <path
                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                     </svg>
-                                    <input type="text" placeholder="Search universities by name or keyword..."
+                                    <input type="text" placeholder="Search universities..."
                                         class="outline-none text-sm text-gray-700 w-full ml-4">
                                 </div>
                                 <button
@@ -246,7 +246,7 @@ const activeTab = ref('Universities')
                         <!-- loop university information  -->
                         <router-link :to="{ name: 'university-details', params: { slug: university.slug } }"
                             v-for="university in universitiesData" :key="university.id" href="/universities-details">
-                            <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="w-[100%] h-90 bg-white rounded-md shadow-md overflow-hidden">
                                 <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
                                     <!-- Images here -->
                                 </div>
@@ -282,7 +282,7 @@ const activeTab = ref('Universities')
                     <!-- Pagination Controls -->
                     <div class="mt-8 flex justify-center items-center space-x-2">
                         <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
-                            class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                            class="px-3 py-1 rounded-md border cursor-pointer hover:bg-white transition-all ease-in-out border-blue-400 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
                             Previous
                         </button>
 
@@ -298,7 +298,7 @@ const activeTab = ref('Universities')
                         </template>
 
                         <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
-                            class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                            class="px-3 py-1 rounded-md border border-blue-400 cursor-pointer text-sm font-medium text-gray-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed">
                             Next
                         </button>
                     </div>
@@ -345,19 +345,21 @@ const activeTab = ref('Universities')
 
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Budget</h3>
+                            <input type="number" v-model="budget"
+                                class="w-full py-2 px-2 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                         </div>
 
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">University Type</h3>
                             <div class="space-y-1 text-sm text-gray-600 flex gap-2">
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox"
-                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    <input type="radio" v-model="universityType" value="public"
+                                        class="form-radio h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
                                     Public
                                 </label>
                                 <label class="inline-flex items-center">
-                                    <input type="checkbox"
-                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    <input type="radio" v-model="universityType" value="private"
+                                        class="form-radio h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
                                     Private
                                 </label>
                             </div>
@@ -386,7 +388,7 @@ const activeTab = ref('Universities')
                         </div>
 
                         <button
-                            class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer">
+                            class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md focus:outline-none hover:ring-2 hover:ring-blue-400 focus:ring-offset-2">
                             Apply Filters
                         </button>
                     </div>
@@ -402,7 +404,7 @@ const activeTab = ref('Universities')
                                     <path
                                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                 </svg>
-                                <input type="text" placeholder="Search universities by name or keyword..."
+                                <input type="text" placeholder="Search programs..."
                                     class="outline-none text-sm text-gray-700 w-full ml-4">
                             </div>
                             <button
