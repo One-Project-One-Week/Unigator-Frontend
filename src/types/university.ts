@@ -1,5 +1,6 @@
 export interface University {
     id: number
+    name: string,
     user: {
         name: string,
         email: string,

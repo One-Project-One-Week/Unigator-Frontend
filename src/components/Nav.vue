@@ -15,8 +15,8 @@ const authStore = useAuthStore();
 
 const { user } = storeToRefs(authStore);
 
-onMounted(() => {
-    authStore.fetchUser();
+onMounted(async () => {
+    await authStore.fetchUser();
 });
 </script>
 

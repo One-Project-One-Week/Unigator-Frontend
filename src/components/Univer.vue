@@ -8,7 +8,6 @@ import { useProgramStore } from '@/stores/useProgram'
 import Program from '@/components/Program.vue'
 
 const uniStore = useUniStore()
-const programStore = useProgramStore()
 const { universities, pagination, loading } = storeToRefs(uniStore)
 const currentPage = ref(1)
 const perPage = ref(10)
@@ -62,9 +61,9 @@ watch(selectedCountry, () => {
     }
 })
 
-onMounted(() => {
-    fetchUniversities()
-    fetchCountries()
+onMounted(async () => {
+    await fetchUniversities()
+    await fetchCountries()
 })
 
 const universitiesData = computed(() => {
@@ -256,7 +255,8 @@ const activeTab = ref('Universities')
                                     <!-- Images here -->
                                 </div>
                                 <div class="p-4">
-                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university.user.name }}</h3>
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university?.name }}
+                                    </h3>
                                     <p class="flex items-center gap-2 text-sm text-gray-600 mb-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -273,7 +273,7 @@ const activeTab = ref('Universities')
                                     <div class="flex flex-wrap gap-2">
                                         <!-- Looping The programs -->
                                         <span v-for="pn in university?.program_names"
-                                            class="bg-blue-100 text-blue-500 text-xs rounded-full px-2 py-1 font-medium">Business
+                                            class="bg-blue-100 text-blue-500 text-xs rounded-full px-2 py-1 font-medium">
                                             {{ pn }}</span>
                                     </div>
                                 </div>
