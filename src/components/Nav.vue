@@ -97,15 +97,16 @@ onMounted(async () => {
                                 </svg>
                             </div>
                             <div class="flex flex-col items-start">
-                                <span class="text-gray-700 font-medium">Sarah Johnson</span>
-                                <span class="text-gray-500 text-sm">sarah.j@example.com</span>
+                                <span class="text-gray-700 font-medium">{{ user?.name }}</span>
+                                <span class="text-gray-500 text-sm">{{ user?.email }}</span>
                             </div>
                         </div>
                     </div>
                     <ul v-if="isProfileOpen"
                         class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
-                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">My University</a></li>
-                        <li class="border-t border-gray-200"><a href="#"
+                        <li><router-link to="/universities" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">My
+                                University</router-link></li>
+                        <li class="border-t border-gray-200"><a href="#" @click="authStore.logout"
                                 class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Log out</a></li>
                     </ul>
                 </div>
@@ -149,8 +150,8 @@ onMounted(async () => {
                                 </svg>
                             </div>
                             <div class="flex flex-col items-start">
-                                <span class="text-gray-700 font-medium">Sarah Johnson</span>
-                                <span class="text-gray-500 text-sm">sarah.j@example.com</span>
+                                <span class="text-gray-700 font-medium">{{ user?.name }}</span>
+                                <span class="text-gray-500 text-sm">{{ user?.email }}</span>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,14 @@ const props = defineProps({
     city: {
         type: String,
         required: true
+    },
+    logo: {
+        type: String,
+        required: true
+    },
+    cover: {
+        type: String,
+        required: true
     }
 })
 </script>
@@ -19,13 +27,14 @@ const props = defineProps({
     <div class="pt-[50px]">
         <div class="bg-gray-200 relative w-full h-[500px]">
             <div class="absolute inset-0 bg-gray-300 opacity-90">
-                <img class="w-full h-full object-cover" src="../assets/images/havard.png" alt="">
+                <img class="w-full h-full object-cover"
+                    :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${cover}`" :alt="name">
             </div>
             <div class="absolute bottom-0 left-0 flex flex-row items-end px-20">
                 <div class="bg-gray-300 w-32 h-32 rounded-md mb-4 flex items-center justify-center">
                     <div class="w-28 h-28 bg-gray-400 rounded-sm overflow-hidden">
-                        <img class="rounded-sm w-full h-full object-cover" src="../assets/images/havard-logo.png"
-                            alt="">
+                        <img class="rounded-sm w-full h-full object-cover"
+                            :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${logo}`" :alt="name">
                     </div>
                 </div>
                 <div class="ml-5 pb-10">

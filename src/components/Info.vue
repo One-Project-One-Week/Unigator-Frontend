@@ -60,7 +60,7 @@ watch(() => props.university, (newVal) => {
                             <div class="flex justify-between items-center mb-3">
                                 <h2 class="text-2xl font-semibold text-gray-800">About University of {{
                                     university?.user.name
-                                }}</h2>
+                                    }}</h2>
 
                                 <div class="bg-white shadow-md rounded-md py-2 px-3">
                                     <p class="font-semibold mb-2">Rate this University</p>
@@ -78,15 +78,7 @@ watch(() => props.university, (newVal) => {
                                 </div>
                             </div>
                             <p class="text-gray-700 mb-4">
-                                The University of Oxford is a collegiate research university in Oxford, England. It is
-                                the
-                                oldest university in the
-                                English-speaking world and the world's second-oldest university in continuous operation.
-                            </p>
-                            <p class="text-gray-700">
-                                Oxford is a world-leading centre of learning, teaching and research and the oldest
-                                university in the English-speaking
-                                world. It consists of 39 independent colleges, and 6 permanent private halls.
+                                {{ university?.description }}
                             </p>
                             <div class="flex flex-wrap gap-10 justify-center align-center mt-10">
                                 <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
@@ -99,7 +91,7 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Founded</p>
                                     </div>
                                     <div class="mt-1">
-                                        <p>2019</p>
+                                        <p>{{ university?.founded }}</p>
                                     </div>
                                 </div>
 
@@ -113,7 +105,7 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Student Population</p>
                                     </div>
                                     <div class="mt-1">
-                                        <p>20546</p>
+                                        <p>{{ university?.no_of_students }}</p>
                                     </div>
                                 </div>
 
@@ -128,7 +120,7 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Ranking</p>
                                     </div>
                                     <div class="mt-1">
-                                        <p>#4 World</p>
+                                        <p>#{{ university?.ranking }} World</p>
                                     </div>
                                 </div>
 
@@ -142,7 +134,7 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Website</p>
                                     </div>
                                     <div class="mt-1">
-                                        <a href="">Visit Official Website</a>
+                                        <a :href="university?.website_link" target="_blank">Visit Official Website</a>
                                     </div>
                                 </div>
                             </div>
@@ -165,12 +157,9 @@ watch(() => props.university, (newVal) => {
                             </div>
                             <h3 class="text-lg font-semibold text-gray-700 mb-2">Degree Levels</h3>
                             <div class="flex space-x-4">
-                                <button
-                                    class="bg-gray-200 rounded-full px-3 py-1 text-gray-700 text-sm">Bachelor's</button>
-                                <button
-                                    class="bg-gray-200 rounded-full px-3 py-1 text-gray-700 text-sm">Master's</button>
-                                <button
-                                    class="bg-gray-200 rounded-full px-3 py-1 text-gray-700 text-sm">Doctoral</button>
+                                <button v-for="level in university?.levels"
+                                    class="bg-gray-200 rounded-full px-3 py-1 text-gray-700 text-sm">{{
+                                    level }}</button>
                             </div>
                         </section>
 
@@ -284,8 +273,7 @@ watch(() => props.university, (newVal) => {
                             <h3 class="text-lg font-semibold text-gray-800 mb-4">Contact Information</h3>
                             <div class="mb-4">
                                 <h4 class="font-semibold text-gray-700">Address</h4>
-                                <p class="text-gray-600 text-sm">University Offices, Wellington Square, Oxford OX1 2JD,
-                                    United Kingdom</p>
+                                <p class="text-gray-600 text-sm">{{ university?.address }}</p>
                             </div>
                             <div class="mb-4">
                                 <h4 class="font-semibold text-gray-700">Phone</h4>

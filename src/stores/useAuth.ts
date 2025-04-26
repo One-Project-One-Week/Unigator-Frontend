@@ -88,7 +88,7 @@ export const useAuthStore = defineStore('auth', () => {
     if (!token.value) return
     try {
       const res = await axios.get('/user')
-      user.value = res.data.data
+      user.value = res.data.data.user
       console.log(user.value)
     } catch (err: any) {
       if (err.response.status === 401) {

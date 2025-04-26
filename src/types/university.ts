@@ -25,6 +25,15 @@ export interface University {
     program_names: string[]
     founded: number,
     no_of_students: number,
-    similar_universities: {},
-    website_link: string
+    similar_universities: {
+        id: number,
+        name: string,
+        logo: string,
+        slug: string,
+    }[],
+    website_link: string,
+    address: string,
+    levels: string[],
+    degree_levels: string[],
+    cover: string,
 } 

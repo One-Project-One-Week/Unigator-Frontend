@@ -32,7 +32,8 @@ onMounted(async () => {
     </div>
 
     <div>
-        <Detail v-if="university" :name="university.user.name" :country="university.country" :city="university.city" />
+        <Detail v-if="university" :name="university.user.name" :country="university.country" :city="university.city"
+            :logo="university.logo" :cover="university.cover" />
     </div>
 
     <div>

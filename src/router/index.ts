@@ -7,7 +7,7 @@ import Contact from '@/views/Contact.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
 import ProgramDetail from '@/views/ProgramDetail.vue'
-
+import { authMiddleware } from '@/middleware/auth'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -21,6 +21,7 @@ const router = createRouter({
       name: 'university-details',
       component: UniDetail,
       props: true,
+      beforeEnter: authMiddleware,
     },
     {
       path: '/universities',
@@ -52,11 +53,13 @@ const router = createRouter({
       name: 'program-details',
       component: ProgramDetail,
       props: true,
+      beforeEnter: authMiddleware,
     },
     {
       path: '/programs',
       name: 'programs',
       component: ProgramDetail,
+      beforeEnter: authMiddleware,
     }
   ],
 })
