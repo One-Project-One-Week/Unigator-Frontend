@@ -58,12 +58,14 @@ onMounted(() => {
 
             <div class="hidden md:flex items-center justify-end gap-3 w-auto">
                 <div v-if="!user">
-                    <RouterLink to="/register">
-                        <Button text="Register" intent="primary" />
-                    </RouterLink>
-                    <RouterLink to="/login">
-                        <Button text="Login" intent="outline" />
-                    </RouterLink>
+                    <div class="flex gap-3 ">
+                        <RouterLink to="/register">
+                            <Button text="Register" intent="primary" />
+                        </RouterLink>
+                        <RouterLink to="/login">
+                            <Button text="Login" intent="outline" />
+                        </RouterLink>
+                    </div>
                 </div>
 
                 <!-- profile -->

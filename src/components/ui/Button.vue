@@ -15,11 +15,11 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 
 <template>
     <button :class="[
-        'px-4 py-2 rounded-md transition-colors cursor-pointer',
+        'px-4  rounded-md transition-colors cursor-pointer',
         {
-            'bg-blue-500 hover:bg-blue-600 text-white': intent === 'primary',
+            'bg-blue-700 py-2.5 hover:bg-blue-500 text-white': intent === 'primary',
             'bg-gray-500 hover:bg-gray-600 text-white': intent === 'secondary',
-            'border-2 border-blue-500 text-black hover:bg-blue-50 hover:text-black': intent === 'outline'
+            'border-2 py-2 border-blue-500 text-black hover:bg-blue-100 hover:text-black': intent === 'outline'
         },
         {
             'opacity-50 cursor-not-allowed': disabled,
