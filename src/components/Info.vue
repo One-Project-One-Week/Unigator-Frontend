@@ -32,23 +32,23 @@ watch(() => props.university, (newVal) => {
                 <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-pink-500"></div>
             </div>
             <template v-else>
-                <nav class="bg-slate-300 py-3 px-4 rounded-md mb-8">
+                <nav class="bg-[#4895ef] py-3 px-4 rounded-md mb-8">
                     <ul class="flex space-x-4">
                         <li @click="activeTab = 'overview'" class="cursor-pointer">
                             <a
-                                :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'overview', 'text-white hover:text-blue-500': activeTab !== 'overview' }">Overview</a>
+                                :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'overview', 'text-white hover:text-gray-200': activeTab !== 'overview' }">Overview</a>
                         </li>
                         <li @click="activeTab = 'programs'" class="cursor-pointer">
                             <a
-                                :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'programs', 'text-white hover:text-blue-500': activeTab !== 'programs' }">Programs</a>
+                                :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'programs', 'text-white hover:text-gray-200': activeTab !== 'programs' }">Programs</a>
                         </li>
-                        <li @click="activeTab = 'admissions'" class="cursor-pointer">
+                        <!-- <li @click="activeTab = 'admissions'" class="cursor-pointer">
                             <a
                                 :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'admissions', 'text-white hover:text-blue-500': activeTab !== 'admissions' }">Admissions</a>
-                        </li>
+                        </li> -->
                         <li @click="activeTab = 'campus-life'" class="cursor-pointer">
                             <a
-                                :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'campus-life', 'text-white hover:text-blue-500': activeTab !== 'campus-life' }">Campus
+                                :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'campus-life', 'text-white hover:text-gray-200': activeTab !== 'campus-life' }">Campus
                                 Life</a>
                         </li>
                     </ul>
@@ -174,7 +174,7 @@ watch(() => props.university, (newVal) => {
                             </div>
                         </section>
 
-                        <section v-if="activeTab === 'admissions'" class="mb-8">
+                        <!-- <section v-if="activeTab === 'admissions'" class="mb-8">
                             <h2 class="text-2xl font-semibold text-black mb-4">Admissions Information</h2>
                             <p class="text-gray-800 text-md">University of Oxford has a competitive admissions process.
                                 Here's what you need to know about applying:</p>
@@ -234,7 +234,7 @@ watch(() => props.university, (newVal) => {
                                     class="h-10 bg-blue-400 px-5 py-1 rounded-md text-white hover:bg-blue-500 cursor-pointer">Apply
                                     Now</button>
                             </div>
-                        </section>
+                        </section> -->
 
                         <section v-if="activeTab === 'campus-life'" class="mb-8">
                             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Campus Life</h2>
