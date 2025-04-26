@@ -76,7 +76,8 @@ const topUniversitiesData = computed(() => {
                                         d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.766 4.635 1.123 6.545z" />
                                 </svg>
                                 <span class="ml-1 text-gray-700 dark:text-gray-300">{{ university.rating ?
-                                    university.rating.toFixed(1) : 'N/A' }}{{ university.rating ? '/5' : '' }}</span>
+                                    Number(university.rating).toFixed(1) : 'N/A' }}{{ university.rating ? '/5' : ''
+                                    }}</span>
                             </div>
                             <span
                                 class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-red-800 dark:text-red-100">#{{

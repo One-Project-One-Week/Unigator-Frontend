@@ -30,8 +30,12 @@ interface Program {
     universities: {
         name: string
         logo: string,
-        application_link: string
+        application_link: string,
+        city: string,
+        country: string,
+        slug: string
     },
+
 }
 
 interface PaginatedResponse {

@@ -1,7 +1,55 @@
 <script lang="ts" setup>
 import { useUniRegister } from '@/composables/useRegister';
+import { ref, watch, onMounted } from 'vue';
+import { useCountryAndCity } from '@/composables/getCountryAndCity';
+
+interface Country {
+    id: number;
+    name: string;
+    iso2: string;
+    emoji: string;
+    currency: string;
+}
+
+interface City {
+    id: number;
+    name: string;
+}
 
 const { uniForm, logoPreview, loading, errors, handleLogoChange, handleUniRegister } = useUniRegister();
+
+const {
+    countries,
+    fetchCountries,
+    requestOptions
+} = useCountryAndCity()
+
+const selectedCountry = ref<Country | null>(null)
+const selectedCity = ref('')
+const cities = ref<City[]>([])
+
+const fetchCities = async (country: Country) => {
+    if (!selectedCountry.value) return
+    const res = await fetch(`https://api.countrystatecity.in/v1/countries/${country.iso2}/cities`, requestOptions)
+    const data = await res.json()
+    cities.value = data
+}
+
+watch(selectedCountry, () => {
+    if (selectedCountry.value) {
+        fetchCities(selectedCountry.value)
+        uniForm.value.country = selectedCountry.value.name
+    }
+})
+
+watch(selectedCity, () => {
+    uniForm.value.city = selectedCity.value
+})
+
+onMounted(async () => {
+    await fetchCountries()
+})
+
 </script>
 
 <template>
@@ -80,10 +128,10 @@ const { uniForm, logoPreview, loading, errors, handleLogoChange, handleUniRegist
                 <div class="w-[48%]">
                     <label for="city" class="text-gray-700 text-sm font-bold mb-1">Country</label>
                     <div>
-                        <select
+                        <select v-model="selectedCountry"
                             class="shadow rounded border-1 border-gray-200 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option>
-                                United State
+                            <option v-for="country in countries" :key="country.id" :value="country">
+                                {{ country.name }}
                             </option>
                         </select>
                     </div>
@@ -92,12 +140,15 @@ const { uniForm, logoPreview, loading, errors, handleLogoChange, handleUniRegist
                 <div class="w-[48%]">
                     <label for="city" class="text-gray-700 text-sm font-bold mb-1">City</label>
                     <div>
-                        <select
+                        <select v-model="selectedCity"
                             class="shadow rounded border-1 border-gray-200 w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                            <option>
-                                New york
+                            <option v-for="city in cities" :key="city.id" :value="city.name">
+                                {{ city.name }}
                             </option>
                         </select>
+                    </div>
+                    <div v-if="errors.city" class="text-red-500 text-xs mt-1">
+                        {{ errors.city[0] }}
                     </div>
                 </div>
             </div>

@@ -100,6 +100,15 @@ const generatePageNumbers = () => {
     return pages
 }
 
+const clearFilters = () => {
+    selectedCountry.value = null
+    selectedCity.value = ''
+    budget.value = null
+    universityType.value = null
+    search.value = ''
+    fetchUniversities(1)
+}
+
 const activeTab = ref('Universities')
 </script>
 
@@ -136,7 +145,12 @@ const activeTab = ref('Universities')
             <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
                 <aside class="lg:col-span-1">
                     <div class="bg-white rounded-md shadow-md p-6 mb-6">
-                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Filters</h2>
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-lg font-semibold text-gray-800">Filters</h2>
+                            <button @click="clearFilters" class="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                                Clear All
+                            </button>
+                        </div>
                         <div class="flex items-center text-gray-600 mb-2">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" class="w-4 h-4 mr-2">
@@ -149,20 +163,6 @@ const activeTab = ref('Universities')
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Country</h3>
                             <div>
-                                <!-- <Select v-model="selectedCountry">
-                                    <SelectTrigger
-                                        class="w-full border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
-                                        <SelectValue placeholder="Select Country" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectGroup>
-                                            <SelectLabel>Countries</SelectLabel>
-                                            <SelectItem v-for="country in countries" :key="country.id" :value="country">
-                                                {{ country.name }}
-                                            </SelectItem>
-                                        </SelectGroup>
-                                    </SelectContent>
-                                </Select> -->
                                 <select v-model="selectedCountry"
                                     class="w-full py-1 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                                     <option v-for="country in countries" :key="country.id" :value="country">
@@ -175,20 +175,6 @@ const activeTab = ref('Universities')
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Cities</h3>
                             <div>
-                                <!-- <Select v-model="selectedCity">
-                                    <SelectTrigger :disabled="!selectedCountry"
-                                        class="w-full border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
-                                        <SelectValue placeholder="Select City" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        <SelectGroup>
-                                            <SelectLabel>Cities</SelectLabel>
-                                            <SelectItem v-for="city in cities" :key="city.id" :value="city.name">
-                                                {{ city.name }}
-                                            </SelectItem>
-                                        </SelectGroup>
-                                    </SelectContent>
-                                </Select> -->
                                 <select v-model="selectedCity" :disabled="!selectedCountry"
                                     class="w-full py-1 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                                     <option v-for="city in cities" :key="city.id" :value="city.name">
@@ -250,6 +236,10 @@ const activeTab = ref('Universities')
 
                     <div v-if="loading" class="flex justify-center items-center h-64">
                         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+                    </div>
+
+                    <div v-else-if="universitiesData.length <= 0">
+                        <p class="text-gray-500 text-center py-4">No universities found</p>
                     </div>
 
                     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
