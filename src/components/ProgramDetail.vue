@@ -13,9 +13,11 @@ import { useRouter } from 'vue-router';
 //     }
 // })
 
+
 const router = useRouter()
 
 const { program, loading } = storeToRefs(useProgramStore())
+
 
 // console.log(program.value)
 </script>
@@ -154,5 +156,6 @@ const { program, loading } = storeToRefs(useProgramStore())
                 </div>
             </div>
         </div>
+
     </section>
 </template>

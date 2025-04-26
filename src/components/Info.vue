@@ -1,28 +1,6 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
-
-interface University {
-    id: number
-    user: {
-        name: string
-        email: string
-        phone: string
-        bio: string
-    }
-    slug: string
-    logo: string
-    image: object
-    country: string
-    city: string
-    description: string
-    rating: number
-    ranking: number
-    program_names: string[]
-    founded: number,
-    no_of_students: number,
-    similar_universities: {},
-    website_link: string
-}
+import type { University } from '@/types/university';
 
 const activeTab = ref('overview');
 
@@ -179,30 +157,11 @@ watch(() => props.university, (newVal) => {
                             </p>
                             <h3 class="text-lg font-semibold text-gray-700 mb-2">Top Programs</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <a href="/programs"
+                                <router-link v-for="program in university?.programs"
+                                    :to="{ name: 'program-details', params: { id: program.id } }"
                                     class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Philosophy, Politics and Economics
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Law
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Medicine
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    English Literature
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    History
-                                </a>
-                                <a href="programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Mathematics
-                                </a>
+                                    {{ program.name }}
+                                </router-link>
                             </div>
                             <h3 class="text-lg font-semibold text-gray-700 mb-2">Degree Levels</h3>
                             <div class="flex space-x-4">
@@ -340,8 +299,8 @@ watch(() => props.university, (newVal) => {
 
                         <section class="bg-white rounded-md shadow-md p-6">
                             <h3 class="text-lg font-semibold text-gray-800 mb-4">Similar Universities</h3>
-                            <div v-if="university.similar_universities === '{}'"
-                                v-for="suniversity in university.similar_universities"
+                            <div v-if="university?.similar_universities && typeof university.similar_universities === 'string' && university.similar_universities !== '{}'"
+                                v-for="suniversity in JSON.parse(university.similar_universities)"
                                 class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-gray-300 rounded-md flex items-center justify-center">
                                     <img src="../assets/images/cambridge.png" alt="">
