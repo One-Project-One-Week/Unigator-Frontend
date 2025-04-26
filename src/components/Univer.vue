@@ -256,7 +256,7 @@ const activeTab = ref('Universities')
                                     <!-- Images here -->
                                 </div>
                                 <div class="p-4">
-                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university.name }}</h3>
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university.user.name }}</h3>
                                     <p class="flex items-center gap-2 text-sm text-gray-600 mb-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">

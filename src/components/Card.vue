@@ -48,10 +48,10 @@ const topUniversitiesData = computed(() => {
                     <div class="h-[150px] relative w-full bg-gray-100 flex items-center justify-center">
                         <img v-if="university.logo"
                             :src="`https://pub-75082a7eeca64d9986a26ca5e876a0a9.r2.dev/${university.logo}`"
-                            :alt="university.name" class="h-full w-full object-cover">
+                            :alt="university.user.name" class="h-full w-full object-cover">
                     </div>
                     <div class="p-4">
-                        <h3 class="text-xl font-semibold text-black">{{ university.name }}</h3>
+                        <h3 class="text-xl font-semibold text-black">{{ university.user.name }}</h3>
                         <p class="mt-1 text-sm text-black">
                             <span class="line-clamp-1">
                                 <svg class="w-4 h-4 inline-block mr-1 align-text-bottom" fill="none"
