@@ -31,6 +31,8 @@ interface PaginatedResponse {
 
 export const useProgramStore = defineStore('program', () => {
     const programs = ref<Program[]>([])
+    const program = ref<Program | null>(null)
+    const loading = ref<boolean>(false)
     const pagination = ref<PaginationMeta>({
         current_page: 1,
         last_page: 1,
@@ -59,10 +61,26 @@ export const useProgramStore = defineStore('program', () => {
         }
     }
 
+    const fetchProgram = async (id: number) => {
+        try {
+            loading.value = true
+            const res = await axios.get(`/programs/${id}`)
+            program.value = res.data.data
+            console.log(program.value)
+        } catch (err: any) {
+            throw err
+        } finally {
+            loading.value = false
+        }
+    }
+
     return {
         programs,
         pagination,
-        fetchAllPrograms
+        fetchAllPrograms,
+        fetchProgram,
+        program,
+        loading
     }
 
 })

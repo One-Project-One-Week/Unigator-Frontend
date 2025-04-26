@@ -3,6 +3,7 @@ import { useProgramStore } from '@/stores/useProgram'
 import { storeToRefs } from 'pinia'
 import { ref, computed, onMounted, watch } from 'vue'
 import { useCountryAndCity } from '@/composables/getCountryAndCity'
+import { RouterLink } from 'vue-router'
 interface Country {
     id: number;
     name: string;
@@ -201,14 +202,14 @@ const programsData = computed(() => {
                             Search
                         </button>
                     </div>
-                    <span class="text-sm text-gray-600">Results : {{ programPagination.total }} Program</span>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- loop university information  -->
 
 
-                    <a v-for="program in programsData" :key="program.id" href="/universities-details">
+                    <router-link :to="{ name: 'program-details', params: { id: program.id } }"
+                        v-for="program in programsData" :key="program.id" href="/universities-details">
                         <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
                             <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
                                 <!-- Images here -->
@@ -234,8 +235,13 @@ const programsData = computed(() => {
 
                             </div>
                         </div>
-                    </a>
+                    </router-link>
                 </div>
+
+
+                <span class="flex justify-end text-sm text-gray-600 mt-4 md:mt-2">Results : {{ programPagination.total
+                    }} Program</span>
+
                 <div class="mt-8 flex justify-center items-center space-x-2">
                     <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
                         class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">

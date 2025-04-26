@@ -48,9 +48,10 @@ const router = createRouter({
       component: Register,
     },
     {
-      path: '/program-details',
+      path: '/program-details/:id',
       name: 'program-details',
       component: ProgramDetail,
+      props: true,
     },
     {
       path: '/programs',

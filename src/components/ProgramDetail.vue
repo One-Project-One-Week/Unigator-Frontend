@@ -1,34 +1,57 @@
 <script lang="ts" setup>
+import { useProgramStore } from '@/stores/useProgram';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+// const props = defineProps({
+//     program: {
+//         type: Object,
+//         required: true
+//     },
+//     loading: {
+//         type: Boolean,
+//         required: true
+//     }
+// })
+
+const router = useRouter()
+
+const { program, loading } = storeToRefs(useProgramStore())
+
+// console.log(program.value)
 </script>
 
 <template>
-    <div class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div v-if="loading">
+        Loading ....
+    </div>
+    <div v-else class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between">
             <div class="flex items-center gap-3">
-                <a href="/universities-details"
+                <button @click="router.back()"
                     class="flex items-center justify-center rounded-md px-4 py-3 bg-white shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
                     </svg>
-                </a>
+                </button>
                 <div>
-                    <h1 class="text-xl font-bold">Computer Science</h1>
-                    <ul>
-                        <li>Bachelor's Degree • School of Engineering and Applied Sciences</li>
-                    </ul>
+                    <h1 class="text-4xl font-bold">{{ program?.name }}</h1>
                 </div>
             </div>
         </div>
 
         <div class="flex gap-6 mt-5">
             <div class="w-full bg-white rounded-lg shadow-md p-6">
+                <h1 class="text-2xl font-semibold text-gray-800 mb-1"> {{ }} </h1>
+                <ul>
+                    <li>Bachelor's Degree • School of Engineering and Applied Sciences</li>
+                </ul>
                 <h2 class="text-2xl font-semibold text-gray-800 mb-1">Program Overview</h2>
                 <p class="text-gray-600 mb-4 text-sm font-semibold">Comprehensive details about the Computer
                     Science
                     program</p>
-                <div>
+                <!-- <div>
                     <h3 class="text-lg font-semibold text-gray-700 mb-1">Description</h3>
                     <p class="text-gray-600 mb-4 text-sm">
                         A comprehensive program covering algorithms, software engineering, and computer
@@ -39,26 +62,11 @@
                         internships,
                         and research opportunities.
                     </p>
-                </div>
+                </div> -->
                 <div>
                     <h3 class="text-lg font-semibold text-gray-700 mb-1">Admission Requirements</h3>
                     <p class="text-gray-600 mb-4 text-sm">High school diploma, SAT/ACT scores, strong math
                         background</p>
-                </div>
-                <div class="mb-2">
-                    <h3 class="text-lg font-semibold text-gray-700 mb-1">Career Outlook</h3>
-                    <p class="text-gray-600 text-sm mb-1">
-                        Graduates pursue careers as software engineers, data scientists, systems analysts,
-                        and IT
-                        consultants.
-                    </p>
-                    <p class="text-green-500 font-semibold text-sm">The employment rate within 6 months of
-                        graduation is 94%.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700 mb-1">Accreditation</h3>
-                    <p class="text-gray-600 text-sm">Accredited by the Computing Accreditation Commission of
-                        ABET</p>
                 </div>
             </div>
 
@@ -118,7 +126,5 @@
             </div>
 
         </div>
-
-
     </div>
 </template>

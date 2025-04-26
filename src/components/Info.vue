@@ -179,30 +179,11 @@ watch(() => props.university, (newVal) => {
                             </p>
                             <h3 class="text-lg font-semibold text-gray-700 mb-2">Top Programs</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <a href="/programs"
+                                <router-link v-for="program in university?.programs"
+                                    :to="{ name: 'program-details', params: { id: program.id } }"
                                     class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Philosophy, Politics and Economics
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Law
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Medicine
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    English Literature
-                                </a>
-                                <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    History
-                                </a>
-                                <a href="programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
-                                    Mathematics
-                                </a>
+                                    {{ program.name }}
+                                </router-link>
                             </div>
                             <h3 class="text-lg font-semibold text-gray-700 mb-2">Degree Levels</h3>
                             <div class="flex space-x-4">
