@@ -1,28 +1,6 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue';
-
-interface University {
-    id: number
-    user: {
-        name: string
-        email: string
-        phone: string
-        bio: string
-    }
-    slug: string
-    logo: string
-    image: object
-    country: string
-    city: string
-    description: string
-    rating: number
-    ranking: number
-    program_names: string[]
-    founded: number,
-    no_of_students: number,
-    similar_universities: {},
-    website_link: string
-}
+import type { University } from '@/types/university';
 
 const activeTab = ref('overview');
 
@@ -321,8 +299,8 @@ watch(() => props.university, (newVal) => {
 
                         <section class="bg-white rounded-md shadow-md p-6">
                             <h3 class="text-lg font-semibold text-gray-800 mb-4">Similar Universities</h3>
-                            <div v-if="university.similar_universities === '{}'"
-                                v-for="suniversity in university.similar_universities"
+                            <div v-if="university?.similar_universities && typeof university.similar_universities === 'string' && university.similar_universities !== '{}'"
+                                v-for="suniversity in JSON.parse(university.similar_universities)"
                                 class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-gray-300 rounded-md flex items-center justify-center">
                                     <img src="../assets/images/cambridge.png" alt="">

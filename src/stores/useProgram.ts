@@ -20,6 +20,10 @@ interface Program {
     detail: object,
     intake: string,
     payment_plan: string,
+    degree_type: string,
+    universities: {
+        name: string
+    }
 }
 
 interface PaginatedResponse {

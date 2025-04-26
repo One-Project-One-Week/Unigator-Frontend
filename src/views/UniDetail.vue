@@ -6,25 +6,7 @@ import Footer from '@/components/Footer.vue';
 import { useUniStore } from '@/stores/useUni';
 import { onMounted, ref } from 'vue';
 import { storeToRefs } from 'pinia';
-
-interface University {
-    id: number
-    user: {
-        name: string,
-        email: string,
-        phone: string,
-        bio: string,
-    }
-    slug: string
-    logo: string,
-    image: object,
-    country: string,
-    city: string,
-    description: string,
-    rating: number,
-    ranking: number,
-    program_names: string[]
-}
+import type { University } from '@/types/university';
 
 const uniStore = useUniStore();
 
@@ -54,7 +36,7 @@ onMounted(async () => {
     </div>
 
     <div>
-        <Info :university="university" />
+        <Info :university="university || null" />
     </div>
 
     <div>

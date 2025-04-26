@@ -240,7 +240,7 @@ const programsData = computed(() => {
 
 
                 <span class="flex justify-end text-sm text-gray-600 mt-4 md:mt-2">Results : {{ programPagination.total
-                    }} Program</span>
+                }} Program</span>
 
                 <div class="mt-8 flex justify-center items-center space-x-2">
                     <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"

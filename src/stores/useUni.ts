@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
 import { ref } from 'vue'
+import type { University } from '@/types/university'
 
 interface PaginationMeta {
     current_page: number
@@ -9,24 +10,6 @@ interface PaginationMeta {
     total: number,
     next_page_url: string,
     prev_page_url: string
-}
-
-interface University {
-    id: number
-    user: {
-        name: string
-        email: string
-        phone: string
-    }
-    slug: string
-    logo: string,
-    image: object,
-    country: string,
-    city: string,
-    description: string,
-    rating: number,
-    ranking: number,
-    program_names: string[]
 }
 
 interface PaginatedResponse {
@@ -43,7 +26,7 @@ interface FilterParams {
     type?: 'public' | 'private' | null
 }
 
-export const useUniStore = defineStore('uni', () => {
+export const useUniStore = defineStore('university', () => {
     const topUniversities = ref<University[]>([])
     const universities = ref<University[]>([])
     const loading = ref(false)
