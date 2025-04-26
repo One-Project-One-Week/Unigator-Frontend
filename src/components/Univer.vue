@@ -111,16 +111,16 @@ const activeTab = ref('Universities')
         </div>
     </div>
 
-    <div class="w-[100%] flex justify-center mx-auto py-4 px-4 bg-slate-400">
+    <div class="flex justify-center mx-auto py-4 px-4 mt-8 bg-gray-100">
         <div class="w-[40%] flex justify-center gap-10">
-            <ul class="flex space-x-4">
+            <ul class="flex space-x-4 text-lg font-semibold">
                 <li @click="activeTab = 'Universities'" class="cursor-pointer">
                     <a
-                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Universities', 'text-white hover:text-blue-500': activeTab !== 'Universities' }">Universities</a>
+                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Universities', 'text-black hover:text-blue-500': activeTab !== 'Universities' }">Universities</a>
                 </li>
                 <li @click="activeTab = 'Programs'" class="cursor-pointer">
                     <a
-                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Programs', 'text-white hover:text-blue-500': activeTab !== 'Programs' }">Programs</a>
+                        :class="{ 'bg-white shadow-md rounded-md p-2': activeTab === 'Programs', 'text-black hover:text-blue-500': activeTab !== 'Programs' }">Programs</a>
                 </li>
             </ul>
         </div>
@@ -215,7 +215,7 @@ const activeTab = ref('Universities')
                             </div>
                         </div>
                         <button @click="fetchUniversities(1)"
-                            class="bg-black text-white py-2 px-4 rounded-md w-full hover:bg-gray-800 text-sm font-medium">
+                            class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md focus:outline-none hover:ring-2 hover:ring-blue-400 focus:ring-offset-2 hover:bg-blue-500">
                             Apply Filters
                         </button>
                     </div>
@@ -224,23 +224,23 @@ const activeTab = ref('Universities')
                 <main class="lg:col-span-3">
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex gap-4">
-                            <div
-                                class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-search" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                                </svg>
-                                <input type="text" placeholder="Search universities and programs by name or keyword..."
-                                    class="outline-none text-sm text-gray-700 w-[350px] ml-4">
+                            <div class="flex items-center justify-between mb-4 md:flex-row flex-col gap-4">
+                                <div
+                                    class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md w-full md:w-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg>
+                                    <input type="text" placeholder="Search universities..."
+                                        class="outline-none text-sm text-gray-700 w-full ml-4">
+                                </div>
+                                <button
+                                    class="px-4 py-1 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer w-full md:w-auto">
+                                    Search
+                                </button>
                             </div>
-                            <button
-                                class="px-4 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer">
-                                Search
-                            </button>
                         </div>
-
-                        <span class="text-sm text-gray-600">Results : {{ pagination.total }} Universities</span>
                     </div>
 
                     <div v-if="loading" class="flex justify-center items-center h-64">
@@ -251,7 +251,7 @@ const activeTab = ref('Universities')
                         <!-- loop university information  -->
                         <router-link :to="{ name: 'university-details', params: { slug: university.slug } }"
                             v-for="university in universitiesData" :key="university.id" href="/universities-details">
-                            <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                            <div class="w-[100%] h-90 bg-white rounded-md shadow-md overflow-hidden">
                                 <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
                                     <!-- Images here -->
                                 </div>
@@ -281,10 +281,13 @@ const activeTab = ref('Universities')
                         </router-link>
                     </div>
 
+                    <span class="flex justify-end text-sm text-gray-600 mt-4 md:mt-2">Showing {{ pagination.total }}
+                        Universities</span>
+
                     <!-- Pagination Controls -->
                     <div class="mt-8 flex justify-center items-center space-x-2">
                         <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"
-                            class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                            class="px-3 py-1 rounded-md border cursor-pointer hover:bg-white transition-all ease-in-out border-blue-400 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
                             Previous
                         </button>
 
@@ -292,15 +295,15 @@ const activeTab = ref('Universities')
                             <button @click="handlePageChange(page)" :class="[
                                 'px-3 py-1 rounded-md text-sm font-medium',
                                 currentPage === page
-                                    ? 'bg-black text-white'
-                                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                                    ? 'bg-blue-700 text-white'
+                                    : 'border border-blue-700 text-gray-700 hover:bg-gray-50'
                             ]">
                                 {{ page }}
                             </button>
                         </template>
 
                         <button @click="handlePageChange(currentPage + 1)" :disabled="currentPage === totalPages"
-                            class="px-3 py-1 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed">
+                            class="px-3 py-1 rounded-md border border-blue-400 cursor-pointer text-sm font-medium text-gray-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed">
                             Next
                         </button>
                     </div>
@@ -309,7 +312,150 @@ const activeTab = ref('Universities')
         </div>
     </section>
     <section v-if="activeTab === 'Programs'">
-        <Program />
+        <div class="bg-gray-100 py-8">
+            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <aside class="lg:col-span-1">
+                    <div class="bg-white rounded-md shadow-md p-6 mb-6">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Filters</h2>
+                        <div class="flex items-center text-gray-600 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4 mr-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m.386-6.364l-1.591 1.591M12 12l3.75-3.75M12 12l-3.75 3.75" />
+                            </svg>
+                            <span class="text-sm">Refine your search</span>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">Country</h3>
+                            <div>
+                                <select
+                                    class="block w-full border border-gray-300 text-gray-700 py-2 px-2 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
+                                    <!-- Loop Countries -->
+                                    <option>All Countries</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">Cities</h3>
+                            <div>
+                                <select
+                                    class="block w-full border border-gray-300 text-gray-700 py-2 px-2 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
+                                    <!-- Loop Cities -->
+                                    <option>All Cities</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">Budget</h3>
+                            <input type="number" v-model="budget"
+                                class="w-full py-2 px-2 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">University Type</h3>
+                            <div class="space-y-1 text-sm text-gray-600 flex gap-2">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" v-model="universityType" value="public"
+                                        class="form-radio h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    Public
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" v-model="universityType" value="private"
+                                        class="form-radio h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    Private
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-4">
+                            <h3 class="text-sm font-semibold text-gray-700 mb-2">Degree Level</h3>
+                            <div class="flex flex-col text-sm text-gray-600">
+                                <label class="inline-flex items-center mb-1">
+                                    <input type="checkbox"
+                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    Undergraduate
+                                </label>
+                                <label class="inline-flex items-center mb-1">
+                                    <input type="checkbox"
+                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    Graduate
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox"
+                                        class="form-checkbox h-4 w-4 text-blue-500 focus:ring-blue-500 rounded border-gray-300 mr-2">
+                                    Doctorate
+                                </label>
+                            </div>
+                        </div>
+
+                        <button
+                            class="bg-blue-700 text-white py-2 px-4 rounded-md w-full hover:bg-blue-400 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md focus:outline-none hover:ring-2 hover:ring-blue-400 focus:ring-offset-2">
+                            Apply Filters
+                        </button>
+                    </div>
+                </aside>
+
+                <main class="lg:col-span-3">
+                    <div class="flex items-center justify-between mb-4 md:flex-row">
+                        <div class="flex items-center justify-between mb-4 md:flex-row flex-col gap-4">
+                            <div
+                                class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md w-full md:w-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                </svg>
+                                <input type="text" placeholder="Search programs..."
+                                    class="outline-none text-sm text-gray-700 w-full ml-4">
+                            </div>
+                            <button
+                                class="px-4 py-1 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer w-full md:w-auto">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- loop university information  -->
+                        <a href="/universities-details">
+                            <div class="w-[100%] bg-white rounded-md shadow-md overflow-hidden">
+                                <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
+                                    <!-- Images here -->
+                                </div>
+                                <div class="px-4 py-2">
+                                    <h1 class="text-2xl text-blue-500 font-bold">Computer Science</h1>
+                                </div>
+                                <div class="px-4 py-2">
+                                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Harvard University</h3>
+                                    <p class="text-sm text-gray-600 mb-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor"
+                                            class="w-4 h-4 inline-block align-text-bottom mr-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 10.5c0 7.142-4.036 10.5-7.5 10.5-3.464 0-7.5-3.358-7.5-10.5 0-7.143 4.036-10.5 7.5-10.5 3.464 0 7.5 3.357 7.5 10.5z" />
+                                        </svg>
+                                        Cambridge, United States
+                                    </p>
+                                    <p class="text-sm text-gray-700 mb-3">Harvard University is a private Ivy League
+                                        research
+                                        university in Cambridge,...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <span class="flex justify-end text-sm text-gray-600 mt-4 md:mt-2">Showing 10 Universities</span>
+
+                    <!-- pagination control -->
+
+                </main>
+            </div>
+        </div>
     </section>
 
 </template>

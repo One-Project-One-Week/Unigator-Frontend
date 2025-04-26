@@ -82,7 +82,7 @@ watch(() => props.university, (newVal) => {
                             <div class="flex justify-between items-center mb-3">
                                 <h2 class="text-2xl font-semibold text-gray-800">About University of {{
                                     university?.user.name
-                                    }}</h2>
+                                }}</h2>
 
                                 <div class="bg-white shadow-md rounded-md py-2 px-3">
                                     <p class="font-semibold mb-2">Rate this University</p>
@@ -99,14 +99,19 @@ watch(() => props.university, (newVal) => {
                                     </div>
                                 </div>
                             </div>
-                            <p v-if="university?.description" class="text-gray-700 mb-4">
-                                {{ university?.description }}
+                            <p class="text-gray-700 mb-4">
+                                The University of Oxford is a collegiate research university in Oxford, England. It is
+                                the
+                                oldest university in the
+                                English-speaking world and the world's second-oldest university in continuous operation.
                             </p>
-                            <p v-if="university?.user.bio" class="text-gray-700">
-                                {{ university?.user.bio }}
+                            <p class="text-gray-700">
+                                Oxford is a world-leading centre of learning, teaching and research and the oldest
+                                university in the English-speaking
+                                world. It consists of 39 independent colleges, and 6 permanent private halls.
                             </p>
                             <div class="flex flex-wrap gap-10 justify-center align-center mt-10">
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-calendar mt-1" viewBox="0 0 16 16">
@@ -116,11 +121,11 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Founded</p>
                                     </div>
                                     <div class="mt-1">
-                                        <p>{{ university?.founded ? university?.founded : 'N/A' }}</p>
+                                        <p>2019</p>
                                     </div>
                                 </div>
 
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                             fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -130,11 +135,11 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Student Population</p>
                                     </div>
                                     <div class="mt-1">
-                                        <p>{{ university?.no_of_students ? university?.no_of_students : 'N/A' }}</p>
+                                        <p>20546</p>
                                     </div>
                                 </div>
 
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             fill="currentColor" class="bi bi-award mt-1" viewBox="0 0 16 16">
@@ -145,11 +150,11 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Ranking</p>
                                     </div>
                                     <div class="mt-1">
-                                        <p>#{{ university?.ranking }} World</p>
+                                        <p>#4 World</p>
                                     </div>
                                 </div>
 
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                             fill="currentColor" class="bi bi-globe mt-1" viewBox="0 0 16 16">
@@ -159,7 +164,7 @@ watch(() => props.university, (newVal) => {
                                         <p class="text-lg font-semibold">Website</p>
                                     </div>
                                     <div class="mt-1">
-                                        <a :href="university?.website_link" target="_blank">Visit Official Website</a>
+                                        <a href="">Visit Official Website</a>
                                     </div>
                                 </div>
                             </div>
@@ -175,57 +180,27 @@ watch(() => props.university, (newVal) => {
                             <h3 class="text-lg font-semibold text-gray-700 mb-2">Top Programs</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                 <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 6.042V3m0 2.042h-3m3 0h3m-3 6.042v-3m0 3v3m-3-3h3m3-3h-3m3 3H9" />
-                                    </svg>
+                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
                                     Philosophy, Politics and Economics
                                 </a>
                                 <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                    </svg>
+                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
                                     Law
                                 </a>
                                 <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
                                     Medicine
                                 </a>
                                 <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-13.5 3l6-3.5L12 3l-3.5 2.5-6 3.5M3 9l6-3.5L12 3l6 3.5 6-3.5M21 9l-9 6-9-6m1.5 12l-6-3.5L12 21l3.5-2.5 6-3.5" />
-                                    </svg>
+                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
                                     English Literature
                                 </a>
                                 <a href="/programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 4.5v15m7.5-7.5h-15" />
-                                    </svg>
+                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
                                     History
                                 </a>
                                 <a href="programs"
-                                    class="bg-white rounded-md shadow-md p-4 flex items-center text-pink-500">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                    </svg>
+                                    class="bg-white rounded-md shadow-md p-4 flex items-center font-semibold text-black">
                                     Mathematics
                                 </a>
                             </div>
@@ -246,7 +221,7 @@ watch(() => props.university, (newVal) => {
                                 Here's what you need to know about applying:</p>
 
                             <div class="flex flex-wrap gap-10 justify-center align-center mt-10">
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <p class="text-lg font-semibold">Acceptance Rate</p>
                                     </div>
@@ -255,7 +230,7 @@ watch(() => props.university, (newVal) => {
                                     </div>
                                 </div>
 
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <p class="text-lg font-semibold">Application Deadline</p>
                                     </div>
@@ -264,7 +239,7 @@ watch(() => props.university, (newVal) => {
                                     </div>
                                 </div>
 
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <p class="text-lg font-semibold">Tuition (Domestic)</p>
                                     </div>
@@ -273,7 +248,7 @@ watch(() => props.university, (newVal) => {
                                     </div>
                                 </div>
 
-                                <div class="w-[47%] h-25 border-1 border-black rounded-md flex-column py-4 px-5">
+                                <div class="w-[47%] h-25 bg-white shadow-lg rounded-md flex-column py-4 px-5">
                                     <div class="flex gap-2 align-center">
                                         <p class="text-lg font-semibold">Tuition (International)</p>
                                     </div>
@@ -297,7 +272,7 @@ watch(() => props.university, (newVal) => {
 
                             <div class="flex justify-center mt-4">
                                 <button
-                                    class="h-10 bg-[#E11D48] px-5 py-1 rounded-md text-white hover:bg-[#BE123C] cursor-pointer">Apply
+                                    class="h-10 bg-blue-400 px-5 py-1 rounded-md text-white hover:bg-blue-500 cursor-pointer">Apply
                                     Now</button>
                             </div>
                         </section>

@@ -99,7 +99,7 @@ const topUniversitiesData = computed(() => {
         <p class="text-center mt-4">Search through thousands of academic programs to find your perfect match.</p>
         <div class="flex justify-center mt-4">
             <button
-                class="py-2 px-4 bg-blue-500 text-white rounded-[10px] cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+                class="py-2 px-4 bg-blue-700 text-white rounded-[10px] cursor-pointer transition-all duration-300 ease-in-out hover:bg-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
                 Explore Programs
             </button>
         </div>
