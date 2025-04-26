@@ -13,7 +13,11 @@ interface PaginationMeta {
 
 interface University {
     id: number
-    name: string
+    user: {
+        name: string
+        email: string
+        phone: string
+    }
     slug: string
     logo: string,
     image: object,
@@ -43,6 +47,7 @@ export const useUniStore = defineStore('uni', () => {
     const topUniversities = ref<University[]>([])
     const universities = ref<University[]>([])
     const loading = ref(false)
+    const university = ref<University>()
     const pagination = ref<PaginationMeta>({
         current_page: 1,
         last_page: 1,
@@ -87,7 +92,7 @@ export const useUniStore = defineStore('uni', () => {
         try {
             loading.value = true
             const res = await axios.get(`/university/${slug}`)
-            return res.data.data
+            university.value = res.data.data
         } catch (err: any) {
             if (err.response.status === 404) {
                 throw new Error('University not found')
@@ -120,6 +125,7 @@ export const useUniStore = defineStore('uni', () => {
         universities,
         loading,
         pagination,
+        university,
         fetchTopUniversities,
         fetchAllUniversities,
         fetchUniversity,

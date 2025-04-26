@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import axios from 'axios'
-
+import { useRouter } from 'vue-router'
 interface User {
   id: string;
   name: string;
@@ -33,6 +33,7 @@ export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null)
   const token = ref(localStorage.getItem('token') || '')
   const loading = ref(false)
+  const router = useRouter()
 
   const login = async (email: string, password: string) => {
     try {
@@ -41,7 +42,7 @@ export const useAuthStore = defineStore('auth', () => {
       token.value = res.data.data.token
       localStorage.setItem('token', token.value)
       axios.defaults.headers.common['Authorization'] = `Bearer ${token.value}`
-      user.value = res.data.data.user
+      await fetchUser()
     } catch (err: any) {
       throw err
     } finally {
@@ -88,6 +89,7 @@ export const useAuthStore = defineStore('auth', () => {
     try {
       const res = await axios.get('/user')
       user.value = res.data.data
+      console.log(user.value)
     } catch (err: any) {
       if (err.response.status === 401) {
         await logout()
@@ -101,7 +103,20 @@ export const useAuthStore = defineStore('auth', () => {
     localStorage.removeItem('token')
     axios.defaults.headers.common['Authorization'] = ''
     user.value = null
+
+    router.push('/login')
   }
 
-  return { user, token, loading, login, userRegister, uniRegister, logout }
+  // Initialize user data if token exists
+  if (token.value) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token.value}`
+    fetchUser().catch(() => {
+      // If there's an error fetching user data, clear the token
+      token.value = ''
+      localStorage.removeItem('token')
+      axios.defaults.headers.common['Authorization'] = ''
+    })
+  }
+
+  return { user, token, loading, login, userRegister, uniRegister, logout, fetchUser }
 })

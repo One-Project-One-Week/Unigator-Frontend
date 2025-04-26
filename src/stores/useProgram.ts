@@ -1,0 +1,68 @@
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+import axios from 'axios'
+
+interface PaginationMeta {
+    current_page: number
+    last_page: number
+    per_page: number
+    total: number,
+    next_page_url: string,
+    prev_page_url: string
+}
+
+interface Program {
+    id: number,
+    university_id: number,
+    name: string,
+    category_id: number,
+    duration: string,
+    detail: object,
+    intake: string,
+    payment_plan: string,
+}
+
+interface PaginatedResponse {
+    data: {
+        data: Program[]
+        meta: PaginationMeta
+    }
+}
+
+export const useProgramStore = defineStore('program', () => {
+    const programs = ref<Program[]>([])
+    const pagination = ref<PaginationMeta>({
+        current_page: 1,
+        last_page: 1,
+        per_page: 10,
+        next_page_url: '',
+        prev_page_url: '',
+        total: 0
+    })
+
+    const fetchAllPrograms = async (page: number = 1, perPage: number = 9, filters: any) => {
+        try {
+            const res = await axios.get('/findProgram', {
+                params: {
+                    page,
+                    per_page: perPage,
+                    ...filters
+                }
+            })
+            programs.value = res.data.data.data
+            pagination.value = res.data.data.meta
+
+            console.log(programs.value)
+            console.log(pagination.value)
+        } catch (err: any) {
+            throw err
+        }
+    }
+
+    return {
+        programs,
+        pagination,
+        fetchAllPrograms
+    }
+
+})

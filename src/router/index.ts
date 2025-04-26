@@ -6,12 +6,7 @@ import Universities from '@/views/Universities.vue'
 import Contact from '@/views/Contact.vue'
 import Login from '@/views/Login.vue'
 import Register from '@/views/Register.vue'
-import Dashboard from '@/views/University Dashboard/Dashboard.vue'
-import ProgramDetail from '@/components/University Dashboard/ProgramDetail.vue'
-import Program from '@/components/Program.vue'
-import NewProgram from '@/components/University Dashboard/NewProgram.vue'
-import ProfileEdit from '@/components/University Dashboard/ProfileEdit.vue'
-import StudentProfile from '@/components/Student/StudentProfile.vue'
+import ProgramDetail from '@/views/ProgramDetail.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +20,7 @@ const router = createRouter({
       path: '/universities-details/:slug',
       name: 'university-details',
       component: UniDetail,
+      props: true,
     },
     {
       path: '/universities',
@@ -52,11 +48,6 @@ const router = createRouter({
       component: Register,
     },
     {
-      path: '/university-dashboard',
-      name: 'university-dashboard',
-      component: Dashboard,
-    },
-    {
       path: '/program-details',
       name: 'program-details',
       component: ProgramDetail,
@@ -64,23 +55,8 @@ const router = createRouter({
     {
       path: '/programs',
       name: 'programs',
-      component: Program,
-    },
-    {
-      path: '/new-program',
-      name: 'new-program',
-      component: NewProgram,
-    },
-    {
-      path: '/uni-profile-edit',
-      name: 'uni-profile-edit',
-      component: ProfileEdit,
-    },
-    {
-      path: '/student-profile',
-      name: 'student-profile',
-      component: StudentProfile,
-    },
+      component: ProgramDetail,
+    }
   ],
 })
 

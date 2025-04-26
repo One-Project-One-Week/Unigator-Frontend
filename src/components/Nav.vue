@@ -1,6 +1,16 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router';
 import Button from './ui/Button.vue';
+import { useAuthStore } from '@/stores/useAuth';
+import { storeToRefs } from 'pinia';
+import { onMounted } from 'vue';
+
+const authStore = useAuthStore()
+const { user } = storeToRefs(authStore)
+
+onMounted(async () => {
+    await authStore.fetchUser()
+})
 </script>
 
 <template>
@@ -21,19 +31,22 @@ import Button from './ui/Button.vue';
                     to="/contact">Contact</router-link>
             </div>
             <div class="w-[20%] h-full flex items-center justify-start gap-3">
-                <a href="/register">
-                    <Button text="Register" intent="primary" />
-                </a>
-                <a href="/login">
-                    <Button text="Login" intent="outline" />
-                </a>
+                <div v-if="!user">
+                    <a href="/register">
+                        <Button text="Register" intent="primary" />
+                    </a>
+                    <a href="/login">
+                        <Button text="Login" intent="outline" />
+                    </a>
+                </div>
 
                 <!-- profile -->
-                <!-- <div class="flex">
-                    <div class="py-2 px-4 border-2 border-blue-400 rounded-md text-blue-600 hover:bg-gray-200 cursor-pointer">
+                <div class="flex" v-if="user">
+                    <div
+                        class="py-2 px-4 border-2 border-blue-400 rounded-md text-blue-600 hover:bg-gray-200 cursor-pointer">
                         <h1>Profile</h1>
                     </div>
-                </div> -->
+                </div>
             </div>
         </nav>
     </section>
