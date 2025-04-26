@@ -17,13 +17,21 @@ interface Program {
     name: string,
     category_id: number,
     duration: string,
-    detail: object,
+    detail: {
+        year: any,
+        tuition_fees: any
+    },
     intake: string,
     payment_plan: string,
     degree_type: string,
+    level: string,
+    application_requirement: string[],
+    application_guideline: string,
     universities: {
         name: string
-    }
+        logo: string,
+        application_link: string
+    },
 }
 
 interface PaginatedResponse {

@@ -23,6 +23,7 @@ const selectedCity = ref('')
 const budget = ref<number | null>(null)
 const universityType = ref<'public' | 'private' | null>(null)
 const degreeLevel = ref<'undergraduate' | 'graduate' | 'doctorate' | null>(null)
+const search = ref('')
 const cities = ref<City[]>([])
 
 const programStore = useProgramStore()
@@ -34,7 +35,8 @@ const fetchPrograms = async (page: number = 1, perPage: number = 9) => {
         city: selectedCity.value,
         budget: budget.value,
         type: universityType.value,
-        level: degreeLevel.value
+        level: degreeLevel.value,
+        search: search.value
     }
     await programStore.fetchAllPrograms(page, perPage, filters)
     currentPage.value = page
@@ -190,15 +192,31 @@ const programsData = computed(() => {
 
             <main class="lg:col-span-3">
                 <div class="flex items-center justify-between mb-4">
-                    <div class="bg-white rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
+                    <!-- <div class="bg-white rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-5 h-5 text-gray-500 mr-2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607m0 0v3.752a2.25 2.25 0 01-2.25 2.25H5.252a2.25 2.25 0 01-2.25-2.25V16.5" />
                         </svg>
-                        <input type="text" placeholder="Search universities and programs by name or keyword..."
+                        <input type="search" placeholder="Search universities and programs by name or keyword..."
                             class="outline-none text-sm text-gray-700 w-[350px] ">
-                        <button class="bg-slate-300">
+                        <button @click="fetchPrograms(1)" class="bg-slate-300">
+                            Search
+                        </button>
+                    </div> -->
+                    <div class="flex items-center justify-between mb-4 md:flex-row flex-col gap-4">
+                        <div
+                            class="bg-white border-1 border-gray-400 rounded-md shadow-sm flex items-center px-4 py-2 hover:shadow-md w-full md:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg>
+                            <input type="search" v-model="search" placeholder="Search programs..."
+                                class="outline-none text-sm text-gray-700 w-full ml-4">
+                        </div>
+                        <button @click="fetchPrograms(1)"
+                            class="px-4 py-1 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer w-full md:w-auto">
                             Search
                         </button>
                     </div>
@@ -240,7 +258,7 @@ const programsData = computed(() => {
 
 
                 <span class="flex justify-end text-sm text-gray-600 mt-4 md:mt-2">Results : {{ programPagination.total
-                    }} Program</span>
+                }} Program</span>
 
                 <div class="mt-8 flex justify-center items-center space-x-2">
                     <button @click="handlePageChange(currentPage - 1)" :disabled="currentPage === 1"

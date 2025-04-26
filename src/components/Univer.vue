@@ -17,6 +17,7 @@ interface Country {
     name: string;
     iso2: string;
     emoji: string;
+    currency: string;
 }
 
 interface City {
@@ -30,13 +31,15 @@ const selectedCity = ref('')
 const budget = ref<number | null>(null)
 const universityType = ref<'public' | 'private' | null>(null)
 const cities = ref<City[]>([])
+const search = ref('')
 
 const fetchUniversities = async (page: number = 1) => {
     const filters = {
         country: selectedCountry.value?.name,
         city: selectedCity.value,
         budget: budget.value,
-        type: universityType.value
+        type: universityType.value,
+        search: search.value
     }
     await uniStore.fetchAllUniversities(page, perPage.value, filters)
     currentPage.value = page
@@ -197,7 +200,7 @@ const activeTab = ref('Universities')
 
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-700 mb-2">Budget</h3>
-                            <input type="number" v-model="budget"
+                            <input type="number" v-model="budget" :placeholder="selectedCountry?.currency"
                                 class="w-full py-2 px-2 border border-gray-300 text-gray-700 rounded leading-tight focus:outline-none focus:border-blue-500 text-sm">
                         </div>
 
@@ -234,10 +237,10 @@ const activeTab = ref('Universities')
                                         <path
                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                     </svg>
-                                    <input type="text" placeholder="Search universities..."
+                                    <input type="search" v-model="search" placeholder="Search universities..."
                                         class="outline-none text-sm text-gray-700 w-full ml-4">
                                 </div>
-                                <button
+                                <button @click="fetchUniversities(1)"
                                     class="px-4 py-1 bg-white rounded-md border-2 border-blue-400 hover:bg-gray-100 cursor-pointer w-full md:w-auto">
                                     Search
                                 </button>
@@ -257,7 +260,7 @@ const activeTab = ref('Universities')
                                 <div class="bg-gray-200 h-32 flex items-center justify-center text-gray-400">
                                     <!-- Images here -->
                                 </div>
-                                <div class="p-4">
+                                <div class="px-4 py-2">
                                     <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ university?.name }}
                                     </h3>
                                     <p class="flex items-center gap-2 text-sm text-gray-600 mb-2">

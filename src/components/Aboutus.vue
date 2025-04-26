@@ -4,8 +4,7 @@
 <template>
     <div class="pt-[60px]">
         <div class="relative">
-            <img class="w-full object-cover h-[500px]" src="/src/assets/images/aboutus.png "
-                alt="About Unigator">
+            <img class="w-full object-cover h-[500px]" src="/src/assets/images/aboutus.png " alt="About Unigator">
             <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center bg-rgba(0, 0, 0, 0.25)">
                 <div class="flex flex-col justify-start items-center h-full pt-40">
                     <h1 class="text-4xl font-bold text-white mb-2 text-center">About Unigator</h1>
@@ -21,7 +20,7 @@
                     <div>
                         <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-4">Our Mission</h2>
                         <p class="text-lg text-gray-700">
-                            At UniConnect, we believe that every student deserves the opportunity to pursue higher
+                            At Unigator, we believe that every student deserves the opportunity to pursue higher
                             education, regardless of their background or location. Our mission is to empower students
                             around the world by providing them with the resources and support they need to connect with
                             universities and achieve their academic dreams.
@@ -146,7 +145,7 @@
                             <div class="relative w-32 h-32 mx-auto rounded-full bg-gray-100 overflow-hidden">
                                 <img src="/src/assets/images/member/nyan.png" alt="" class="w-full h-full object-cover">
                             </div>
-                            <h3 class="mt-4 text-lg font-medium text-gray-900">Nyan Oak SOe</h3>
+                            <h3 class="mt-4 text-lg font-medium text-gray-900">Faker Gyi</h3>
                             <p class="mt-1 text-sm text-blue-500 font-semibold">Backend</p>
                         </div>
 
